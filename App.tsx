@@ -70,8 +70,11 @@ const SectionTitle: React.FC<{ children: React.ReactNode, className?: string }> 
 const HeroSection: React.FC = () => (
     <header className="relative h-screen min-h-[700px] w-full flex items-center justify-center text-white text-center bg-gray-800">
         <div className="absolute inset-0 bg-black/40 z-10"></div>
-        <img src="https://images.pexels.com/photos/3771045/pexels-photo-3771045.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="A serene Black woman with eyes closed, meditating in a lush Bali jungle setting" className="absolute inset-0 w-full h-full object-cover"/>
+        <img src="https://image.pollinations.ai/prompt/serene%20Black%20woman%20meditating%20in%20lush%20Bali%20jungle,%20sunrise,%20soft%20light,%20calm%20aura" alt="Serene Black woman meditating in a Bali jungle at sunrise" className="absolute inset-0 w-full h-full object-cover"
+/>
+        
         <div className="relative z-20 p-4 flex flex-col items-center max-w-4xl">
+            <BrandLogo className="w-20 h-20 mb-6 text-white" />
             <h1 className="font-header-script text-7xl md:text-9xl drop-shadow-lg">The Second Spring Sisterhood Retreat</h1>
             <p className="mt-4 text-2xl md:text-3xl font-light tracking-wide drop-shadow-md">Blossom into Full Bloom</p>
             <p className="mt-6 text-lg md:text-xl font-semibold tracking-wider drop-shadow">March 24–27, 2026 | Ubud, Bali | Hosted by Coach Melle</p>
@@ -84,19 +87,41 @@ const HeroSection: React.FC = () => (
 );
 
 const WelcomeSection: React.FC = () => (
-    <Section id="welcome" className="bg-white">
-        <div className="grid md:grid-cols-2 gap-12 md:gap-20 items-center">
-            <div>
-                 <SectionTitle className="mb-6">Welcome!</SectionTitle>
-                <p className={`text-lg text-[${COLORS.text}] leading-relaxed`}>
-                    Imagine yourself in Bali, the Island of the Gods, surrounded by lush rice fields, healing waters, and the warmth of sisterhood. The Second Spring Sisterhood Retreat is your invitation to pause, reset, and rise into the radiant season of the authentic you. This is a sanctuary for you to reconnect, rejuvenate, and remember the powerful woman you are.
-                </p>
-            </div>
-            <div className="rounded-lg overflow-hidden shadow-xl transform hover:scale-105 transition-transform duration-500">
-                <img src="https://images.pexels.com/photos/7749092/pexels-photo-7749092.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="A smiling Black woman with natural hair meditating peacefully in a tranquil Bali setting" className="w-full h-full object-cover"/>
-            </div>
-        </div>
-    </Section>
+  <Section id="welcome" className="relative bg-white overflow-hidden">
+    <div className="max-w-5xl mx-auto px-6 flex flex-col items-center text-center">
+      {/* Background shape / glow */}
+      <div className="absolute inset-0 bg-[${COLORS.cream}] opacity-60 rounded-full blur-3xl pointer-events-none -z-10"></div>
+
+      {/* Video placeholder */}
+      <div className="rounded-xl overflow-hidden shadow-lg w-full max-w-2xl mb-10 aspect-video">
+        <iframe
+          className="w-full h-full"
+          src="https://www.youtube.com/embed/VIDEO_ID_HERE"
+          title="A Message from Coach Melle"
+          frameBorder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowFullScreen
+        ></iframe>
+      </div>
+
+      {/* Quote + title */}
+      <p className="italic text-lg text-[${COLORS.green}] mb-3">“This is your second spring — and it’s right on time.”</p>
+      <SectionTitle className="mb-4">A Personal Invitation</SectionTitle>
+
+      {/* Body text */}
+      <p className={`text-lg text-[${COLORS.text}] leading-relaxed max-w-3xl`}>
+        I created this retreat because I know what it’s like to give, and give, and forget yourself.
+        I’ve coached women for over 20 years — CEOs, mothers, healers — and we all hit a point where the mask no longer fits.
+        <br/><br/>
+        The Second Spring is more than a retreat. It’s a <em>reunion</em> with your truth. A sacred space to exhale, laugh, cry, and rise with other women who get it. You don’t need fixing. You need remembering.
+        <br/><br/>
+        <strong>This is your moment. Come home to yourself in Bali.</strong> Bring the parts of you that the world told to be quiet — they’re the loudest ones calling you back.
+      </p>
+
+      {/* Signature */}
+      <p className={`mt-6 font-header-script text-xl text-[${COLORS.green}]`}>— Coach Melle</p>
+    </div>
+  </Section>
 );
 
 const IncludedSection: React.FC = () => (
