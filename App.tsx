@@ -17,12 +17,31 @@ const COLORS = {
 };
 
 const INCLUDED_DATA: IncludedItem[] = [
-    { text: "Luxury accommodations in a private jungle villa" },
-    { text: "Daily organic, locally-sourced meals" },
-    { text: "All workshops, ceremonies, and healing sessions" },
-    { text: "A guided temple excursion and nature hike" },
-    { text: "Professional photoshoot to capture your glow" },
-    { text: "A curated welcome gift with local artisan crafts" },
+  {
+    text: "Luxury accommodations in a private jungle villa",
+    subtext: "Wake up where the jungle sings your name.",
+    featured: true,
+  },
+  {
+    text: "Daily organic, locally-sourced meals",
+    subtext: "Nourish yourself with every bite.",
+  },
+  {
+    text: "All workshops, ceremonies, and healing sessions",
+    subtext: "Come home to the parts of you that feel forgotten.",
+  },
+  {
+    text: "A guided temple excursion and nature hike",
+    subtext: "Walk the sacred paths of Bali with intention.",
+  },
+  {
+    text: "Professional photoshoot to capture your glow",
+    subtext: "Because your radiance deserves to be witnessed.",
+  },
+  {
+    text: "A curated welcome gift with local artisan crafts",
+    subtext: "A blessing from the island to take home.",
+  },
 ];
 
 const EXPERIENCES_DATA: Experience[] = [
@@ -125,17 +144,45 @@ const WelcomeSection: React.FC = () => (
 );
 
 const IncludedSection: React.FC = () => (
-    <Section id="included">
-        <SectionTitle className="text-center mb-16">What’s Included</SectionTitle>
-        <div className="max-w-4xl mx-auto grid sm:grid-cols-2 gap-x-12 gap-y-6">
-            {INCLUDED_DATA.map(item => (
-                <div key={item.text} className="flex items-start text-lg">
-                    <CheckCircleIcon className={`w-7 h-7 text-[${COLORS.green}] mr-4 flex-shrink-0 mt-1`} />
-                    <span className={`text-[${COLORS.text}]`}>{item.text}</span>
-                </div>
-            ))}
+  <Section id="included">
+    <div className="text-center mb-16">
+      <p className="uppercase text-sm tracking-widest text-[${COLORS.green}] font-bold">All-Inclusive Care</p>
+      <SectionTitle>What’s Included</SectionTitle>
+      <p className={`mt-4 text-[${COLORS.text}] text-lg max-w-2xl mx-auto`}>
+        Everything you need to feel nourished, seen, and held — from the moment you arrive to the final hug goodbye.
+      </p>
+    </div>
+
+    <div className="grid sm:grid-cols-2 gap-x-12 gap-y-10 max-w-5xl mx-auto">
+      {INCLUDED_DATA.map((item) => (
+        <div
+          key={item.text}
+          className="relative bg-white p-6 rounded-xl shadow-lg hover:shadow-2xl transform transition-transform duration-300 hover:-translate-y-1 group"
+        >
+          {item.featured && (
+            <span className="absolute top-0 right-0 bg-[${COLORS.peach}] text-white text-xs px-2 py-1 rounded-bl-lg font-semibold shadow">
+              Most Loved
+            </span>
+          )}
+          <div className="flex items-start space-x-4">
+            <div className="flex items-center justify-center w-10 h-10 rounded-full bg-white border border-[${COLORS.green}] shadow-inner group-hover:shadow-[0_0_10px_rgba(106,129,89,0.5)] transition duration-300">
+              <CheckCircleIcon className={`w-5 h-5 text-[${COLORS.green}]`} />
+            </div>
+            <div>
+              <p className={`text-[${COLORS.text}] text-lg font-semibold`}>{item.text}</p>
+              {item.subtext && (
+                <p className="text-sm text-[#948B88] mt-1">{item.subtext}</p>
+              )}
+            </div>
+          </div>
         </div>
-    </Section>
+      ))}
+    </div>
+
+    <div className="mt-16 text-center">
+      <CtaButton variant="primary">Join the Interest List</CtaButton>
+    </div>
+  </Section>
 );
 
 const FlowSection: React.FC = () => (
