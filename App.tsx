@@ -110,22 +110,35 @@ const SectionTitle: React.FC<{ children: React.ReactNode, className?: string }> 
 // --- PAGE SECTIONS ---
 
 const HeroSection: React.FC = () => (
-    <header className="relative h-screen min-h-[700px] w-full flex items-center justify-center text-white text-center bg-gray-800">
-        <div className="absolute inset-0 bg-black/40 z-10"></div>
-        <img src="https://image.pollinations.ai/prompt/serene%20Black%20woman%20meditating%20in%20lush%20Bali%20jungle,%20sunrise,%20soft%20light,%20calm%20aura" alt="Serene Black woman meditating in a Bali jungle at sunrise" className="absolute inset-0 w-full h-full object-cover"
-/>
-        
-        <div className="relative z-20 p-4 flex flex-col items-center max-w-4xl">
-            <BrandLogo className="w-20 h-20 mb-6 text-white" />
-            <h1 className="font-header-script text-7xl md:text-9xl drop-shadow-lg">The Second Spring Sisterhood Retreat</h1>
-            <p className="mt-4 text-2xl md:text-3xl font-light tracking-wide drop-shadow-md">Blossom into Full Bloom</p>
-            <p className="mt-6 text-lg md:text-xl font-semibold tracking-wider drop-shadow">March 24–27, 2026 | Ubud, Bali | Hosted by Coach Melle</p>
-            <div className="mt-10 flex flex-col sm:flex-row gap-4">
-                <CtaButton variant="primary">Join the Interest List</CtaButton>
-                <CtaButton variant="secondary">Learn More</CtaButton>
-            </div>
-        </div>
-    </header>
+  <header className="relative h-screen min-h-[700px] w-full flex items-center justify-center text-white text-center bg-gray-800">
+    <div className="absolute inset-0 bg-black/40 z-10"></div>
+    <img
+      src="https://image.pollinations.ai/prompt/serene%20Black%20woman%20meditating%20in%20lush%20Bali%20jungle,%20sunrise,%20soft%20light,%20calm%20aura"
+      alt="Serene Black woman meditating in a Bali jungle at sunrise"
+      className="absolute inset-0 w-full h-full object-cover"
+    />
+
+    <div className="relative z-20 p-4 flex flex-col items-center max-w-4xl">
+      <BrandLogo className="w-20 h-20 mb-6 text-white" />
+      <h1 className="font-header-script text-7xl md:text-9xl drop-shadow-lg">
+        The Second Spring Sisterhood Retreat
+      </h1>
+      <p className="mt-4 text-2xl md:text-3xl font-light tracking-wide drop-shadow-md">
+        Blossom into Full Bloom
+      </p>
+      <p className="mt-6 text-lg md:text-xl font-semibold tracking-wider drop-shadow">
+        March 24–27, 2026 | Ubud, Bali | Hosted by Coach Melle
+      </p>
+      <div className="mt-10 flex flex-col sm:flex-row gap-4">
+        <CtaButton as="a" href="#register" variant="primary">
+          I’m Ready for My Second Spring
+        </CtaButton>
+        <CtaButton as="a" href="#welcome" variant="secondary">
+          Learn More
+        </CtaButton>
+      </div>
+    </div>
+  </header>
 );
 
 const WelcomeSection: React.FC = () => (
@@ -203,7 +216,9 @@ const IncludedSection: React.FC = () => (
     </div>
 
     <div className="mt-16 text-center">
-      <CtaButton variant="primary">Join the Interest List</CtaButton>
+      <CtaButton as="a" href="#register" variant="primary">
+        Reserve My Place
+      </CtaButton>
     </div>
   </Section>
 );
@@ -300,19 +315,46 @@ const WhyBaliSection: React.FC = () => (
 );
 
 const RegistrationSection: React.FC = () => (
-    <Section id="register" className="text-center">
-         <div className={`bg-[${COLORS.pink}]/30 p-10 md:p-16 rounded-lg max-w-4xl mx-auto`}>
-            <h3 className="text-2xl font-semibold text-[${COLORS.green}] tracking-wider">✨ Registration opens October 2025. Spaces are limited. ✨</h3>
-            <p className={`mt-4 text-lg text-[${COLORS.text}] max-w-xl mx-auto`}>Be the first to know when doors open and receive early bird pricing.</p>
-            <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center items-center">
-                 <CtaButton variant="primary" className="bg-[#F9A870] text-white">Get Notified Early</CtaButton>
-                 <a href="#" className={`inline-flex items-center justify-center gap-2 text-[${COLORS.green}] font-bold hover:opacity-80 transition-opacity`}>
-                    <DownloadIcon className="w-5 h-5" />
-                    Download Info Sheet
-                 </a>
-            </div>
-        </div>
-    </Section>
+  <Section id="register" className="text-center">
+    <div
+      className={`bg-[${COLORS.pink}]/30 p-10 md:p-16 rounded-3xl shadow-xl max-w-3xl mx-auto`}
+    >
+      <h3 className="text-3xl md:text-4xl font-header-script text-[${COLORS.green}] mb-4">
+        Your Second Spring Awaits 🌸
+      </h3>
+      <p
+        className={`text-lg md:text-xl text-[${COLORS.text}] max-w-2xl mx-auto mb-8 leading-relaxed`}
+      >
+        Registration opens <strong>October 2025</strong>. Spaces are limited to
+        an intimate circle of women ready to rise together. Secure your place in
+        Bali and receive exclusive early-bird pricing.
+      </p>
+
+      {/* Boss CTA form-style conclusion */}
+      <form className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+        <input
+          type="email"
+          placeholder="Your email address"
+          className="px-6 py-4 rounded-full border border-[${COLORS.green}] focus:ring-2 focus:ring-[${COLORS.peach}] outline-none w-full sm:w-auto"
+        />
+        <CtaButton as="button" type="submit" variant="primary">
+          Save My Spot
+        </CtaButton>
+      </form>
+
+      <div className="mt-6">
+        <CtaButton
+          as="a"
+          href="/retreat-info.pdf"
+          variant="secondary"
+          className="inline-flex items-center gap-2"
+        >
+          <DownloadIcon className="w-5 h-5" />
+          Download Info Sheet
+        </CtaButton>
+      </div>
+    </div>
+  </Section>
 );
 
 const Footer: React.FC = () => (
