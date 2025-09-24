@@ -1,5 +1,6 @@
 import React from 'react';
 import type { Experience, IncludedItem } from './types';
+import RetreatRhythmSection from './components/RhythmSection';
 import {
   BrandLogo, CheckCircleIcon, SpaIcon, LeafIcon, MessageCircleIcon,
   FlameIcon, MountainIcon, HeartIcon, SparklesIcon, RecycleIcon,
@@ -45,11 +46,33 @@ const INCLUDED_DATA: IncludedItem[] = [
 ];
 
 const EXPERIENCES_DATA: Experience[] = [
-  { icon: SpaIcon, title: "Morning Rituals", description: "Greet the day with gentle yoga, meditation, and intention setting." },
-  { icon: LeafIcon, title: "Holistic Healing", description: "Experience traditional Balinese healing modalities and workshops." },
-  { icon: MessageCircleIcon, title: "Sisterhood Circles", description: "Connect deeply in sacred circles of sharing and listening." },
-  { icon: FlameIcon, title: "Sacred Ceremony", description: "Participate in powerful fire ceremonies and water blessings." },
-  { icon: MountainIcon, title: "Excursions", description: "Explore the natural beauty and spiritual sites of Ubud." },
+  {
+    icon: SpaIcon,
+    title: "Morning Rituals",
+    description: "Greet the day with gentle yoga, meditation, and intention setting.",
+    image: "https://images.pexels.com/photos/4909331/pexels-photo-4909331.jpeg?auto=compress&cs=tinysrgb&w=800",
+  },
+  {
+    icon: LeafIcon,
+    title: "Holistic Healing",
+    description: "Experience traditional Balinese healing modalities and workshops.",
+    image: "https://images.pexels.com/photos/8330352/pexels-photo-8330352.jpeg?auto=compress&cs=tinysrgb&w=800",
+  },
+
+  {
+  icon: MessageCircleIcon,
+  title: "Sisterhood Circles",
+  description: "Connect deeply in sacred circles of sharing and listening.",
+  image: "https://images.pexels.com/photos/5890690/pexels-photo-5890690.jpeg?auto=compress&cs=tinysrgb&w=800",
+  },
+];
+
+const RETREAT_RHYTHM_DATA = [
+  { title: "Ease Into the Day", subtitle: "Gentle mornings with tea, movement, and breath — no alarms needed.",},
+  { title: "Sacred Sessions", subtitle: "Workshops, healing, and sisterhood circles to nourish your growth.",},
+  { title: "Nourishment & Rest", subtitle: "Delicious meals, cozy downtime, naps by the pool, time to just *be*.",},
+  { title: "Exploration & Ceremony", subtitle: "Excursions, water blessings, fire rituals — all woven with intention.",},
+  { title: "Evening Connection", subtitle: "Journaling, soft conversation, music, or simply stars and stillness.",},
 ];
 
 const WHO_ATTENDS_DATA = [
@@ -186,37 +209,77 @@ const IncludedSection: React.FC = () => (
 );
 
 const FlowSection: React.FC = () => (
-    <Section id="flow" className="bg-white">
-        <SectionTitle className="text-center mb-16">What is the Flow?</SectionTitle>
-        <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8">
-            {EXPERIENCES_DATA.map(item => (
-                <div key={item.title} className={`bg-[${COLORS.cream}] p-8 rounded-lg text-center flex flex-col items-center shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-300`}>
-                    <item.icon className={`w-12 h-12 text-[${COLORS.green}] mb-4`} />
-                    <h3 className={`text-xl font-bold text-[${COLORS.green}] mb-2`}>{item.title}</h3>
-                    <p className={`text-[${COLORS.text}] text-sm`}>{item.description}</p>
-                </div>
-            ))}
+  <Section id="flow" className="bg-white">
+    <SectionTitle className="text-center mb-12">The Vibe</SectionTitle>
+    <p className={`text-center text-[${COLORS.text}] text-lg max-w-2xl mx-auto mb-12`}>
+      This isn’t a retreat you watch from the sidelines. It’s one you <em>feel</em> — in your breath, your body, and your spirit. These moments will hold you.
+    </p>
+
+    <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+      {EXPERIENCES_DATA.slice(0, 3).map((item) => (
+        <div
+          key={item.title}
+          className={`bg-[${COLORS.cream}] rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 flex flex-col`}
+        >
+          <img src={item.image} alt={item.title} className="w-full h-72 object-cover" />
+          <div className="p-6 text-center flex-1 flex flex-col">
+            <item.icon className={`w-8 h-8 text-[${COLORS.green}] mx-auto mb-3`} />
+            <h3 className={`text-xl font-bold text-[${COLORS.green}] mb-2`}>{item.title}</h3>
+            <p className={`text-[${COLORS.text}] text-sm flex-1`}>{item.description}</p>
+          </div>
         </div>
-    </Section>
+      ))}
+    </div>
+  </Section>
 );
 
 const WhoShouldAttendSection: React.FC = () => (
-    <Section id="who-attends">
-        <div className="text-center max-w-3xl mx-auto">
-            <SectionTitle className="mb-6">Who Should Attend?</SectionTitle>
-            <p className={`text-lg text-[${COLORS.text}] leading-relaxed`}>
-                This retreat is a sacred call to the woman who is navigating a new chapter of life. The woman who feels the stirrings of change and is ready to embrace her "second spring" with grace, power, and clarity. She is ready to shed old layers, reclaim her joy, and step into her most radiant, authentic self.
-            </p>
-             <div className="flex justify-center space-x-12 mt-12">
-                {WHO_ATTENDS_DATA.map(item => (
-                    <div key={item.title} className="flex flex-col items-center group">
-                        <item.icon className={`w-12 h-12 text-[${COLORS.green}] transition-transform duration-300 group-hover:scale-110`} />
-                        <span className={`mt-3 font-semibold text-[${COLORS.text}]`}>{item.title}</span>
-                    </div>
-                ))}
-            </div>
-        </div>
-    </Section>
+  <Section id="who-attends" className="relative bg-white">
+    <div className="text-center max-w-4xl mx-auto">
+      <SectionTitle className="mb-6">This Retreat is For You If…</SectionTitle>
+      <p className={`text-lg text-[${COLORS.text}] leading-relaxed mb-10`}>
+        You don’t need another to-do list. You need space to breathe, release, and remember yourself.  
+        If any of these feel true, the Sisterhood is calling you:
+      </p>
+
+      <ul className="space-y-6 text-left mx-auto max-w-2xl">
+        <li className="flex items-start gap-4 group transition-all duration-300 hover:translate-x-2">
+          <HeartIcon className={`w-7 h-7 text-[${COLORS.green}] mt-1 flex-shrink-0 group-hover:scale-110 transition-transform`} />
+          <span className={`text-[${COLORS.text}] text-lg`}>
+            You’ve been giving so much that you’ve forgotten yourself.
+          </span>
+        </li>
+        <li className="flex items-start gap-4 group transition-all duration-300 hover:translate-x-2">
+          <SparklesIcon className={`w-7 h-7 text-[${COLORS.green}] mt-1 flex-shrink-0 group-hover:scale-110 transition-transform`} />
+          <span className={`text-[${COLORS.text}] text-lg`}>
+            You ache for deeper connection and true sisterhood.
+          </span>
+        </li>
+        <li className="flex items-start gap-4 group transition-all duration-300 hover:translate-x-2">
+          <RecycleIcon className={`w-7 h-7 text-[${COLORS.green}] mt-1 flex-shrink-0 group-hover:scale-110 transition-transform`} />
+          <span className={`text-[${COLORS.text}] text-lg`}>
+            You’re navigating a new season of life and long for renewal.
+          </span>
+        </li>
+        <li className="flex items-start gap-4 group transition-all duration-300 hover:translate-x-2">
+          <LeafIcon className={`w-7 h-7 text-[${COLORS.green}] mt-1 flex-shrink-0 group-hover:scale-110 transition-transform`} />
+          <span className={`text-[${COLORS.text}] text-lg`}>
+            You crave rituals, beauty, and a sacred pause to breathe again.
+          </span>
+        </li>
+        <li className="flex items-start gap-4 group transition-all duration-300 hover:translate-x-2">
+          <FlameIcon className={`w-7 h-7 text-[${COLORS.green}] mt-1 flex-shrink-0 group-hover:scale-110 transition-transform`} />
+          <span className={`text-[${COLORS.text}] text-lg`}>
+            You know it’s time to soften, release, and rise into your full bloom.
+          </span>
+        </li>
+      </ul>
+
+      <div className="mt-12">
+        <CtaButton as="a" href="#register" variant="primary">Join Us in Bali</CtaButton>
+      </div>
+    </div>
+  </Section>
 );
 
 const WhyBaliSection: React.FC = () => (
@@ -276,6 +339,7 @@ const App: React.FC = () => {
             <WelcomeSection />
             <IncludedSection />
             <FlowSection />
+            <RetreatRhythmSection />
             <WhoShouldAttendSection />
             <WhyBaliSection />
             <RegistrationSection />
