@@ -85,27 +85,27 @@ const WHO_ATTENDS_DATA = [
 const CtaButton: React.FC<{
   children: React.ReactNode;
   variant?: 'primary' | 'secondary';
-  className?: string;
   as?: 'a' | 'button';
   href?: string;
   type?: string;
-}> = ({ children, variant = 'primary', className = '', as = 'button', href, type }) => {
+  className?: string;
+}> = ({ children, variant = 'primary', as = 'button', href, type, className = '' }) => {
   const baseClasses =
-    "font-semibold text-sm tracking-wider uppercase py-4 px-10 rounded-full transform hover:scale-105 transition-all duration-300 ease-in-out shadow-lg";
+    "px-8 py-4 rounded-full font-semibold tracking-wide shadow-lg transition-transform duration-300";
+
+  const styles = {
+    primary: "bg-[#6A8159] text-white hover:scale-105 hover:shadow-xl",
+    secondary:
+      "bg-white border-2 border-[#6A8159] text-[#6A8159] hover:bg-[#6A8159] hover:text-white",
+  };
 
   const Component = as;
-
-  const variantStyles =
-    variant === 'primary'
-      ? { backgroundColor: COLORS.peach, color: 'white' }
-      : { border: '2px solid white', color: 'white', backgroundColor: 'transparent' };
 
   return (
     <Component
       href={href}
       type={type}
-      className={`${baseClasses} ${className}`}
-      style={variantStyles}
+      className={`${baseClasses} ${styles[variant]} ${className}`}
     >
       {children}
     </Component>
@@ -455,11 +455,15 @@ const RegistrationSection: React.FC = () => (
         <CtaButton
           as="a"
           href="/retreat-info.pdf"
-          variant="secondary"
-          className="inline-flex items-center gap-2"
+          className="inline-flex items-center gap-2 border-2 px-6 py-3 rounded-full font-semibold text-sm tracking-wide transition-all duration-300"
+          style={{
+            borderColor: COLORS.green,
+            color: COLORS.green,
+            backgroundColor: "white",
+          }}
         >
-          <DownloadIcon className="w-5 h-5" />
-          Download Info Sheet
+          <DownloadIcon className="w-5 h-5" style={{ color: COLORS.green }} />
+          Download Retreat Guide
         </CtaButton>
       </div>
     </div>
