@@ -3,9 +3,9 @@ import type { Experience, IncludedItem } from './types';
 import RetreatRhythmSection from './components/RhythmSection';
 import {
   BrandLogo, CheckCircleIcon, SpaIcon, LeafIcon, MessageCircleIcon,
-  FlameIcon, MountainIcon, HeartIcon, SparklesIcon, RecycleIcon,
-  DownloadIcon, InstagramIcon, FacebookIcon
+  FlameIcon, HeartIcon, SparklesIcon, RecycleIcon, InstagramIcon, FacebookIcon
 } from './components/Icons';
+import NavBar from './components/NavBar'; 
 
 // --- CONFIG & DATA ---
 
@@ -50,7 +50,7 @@ const EXPERIENCES_DATA: Experience[] = [
     icon: SpaIcon,
     title: "Morning Rituals",
     description: "Greet the day with gentle yoga, meditation, and intention setting.",
-    image: "https://images.pexels.com/photos/4909331/pexels-photo-4909331.jpeg?auto=compress&cs=tinysrgb&w=800",
+    image: "https://image.pollinations.ai/prompt/serene%20Black%20woman%20meditating%20in%20lush%20Bali%20jungle,%20sunrise,%20soft%20light,%20calm%20aura",
   },
   {
     icon: LeafIcon,
@@ -66,20 +66,6 @@ const EXPERIENCES_DATA: Experience[] = [
   },
 ];
 
-const RETREAT_RHYTHM_DATA = [
-  { title: "Ease Into the Day", subtitle: "Gentle mornings with tea, movement, and breath — no alarms needed." },
-  { title: "Sacred Sessions", subtitle: "Workshops, healing, and sisterhood circles to nourish your growth." },
-  { title: "Nourishment & Rest", subtitle: "Delicious meals, cozy downtime, naps by the pool, time to just *be*." },
-  { title: "Exploration & Ceremony", subtitle: "Excursions, water blessings, fire rituals — all woven with intention." },
-  { title: "Evening Connection", subtitle: "Journaling, soft conversation, music, or simply stars and stillness." },
-];
-
-const WHO_ATTENDS_DATA = [
-  { icon: HeartIcon, title: "Connection" },
-  { icon: SparklesIcon, title: "Transformation" },
-  { icon: RecycleIcon, title: "Rebirth" },
-];
-
 // --- REUSABLE COMPONENTS ---
 
 const CtaButton: React.FC<{
@@ -89,26 +75,34 @@ const CtaButton: React.FC<{
   href?: string;
   type?: string;
   className?: string;
-}> = ({ children, variant = 'primary', as = 'button', href, type, className = '' }) => {
+}> = ({
+  children, variant = 'primary', as = 'button', href, type, className = ''
+}) => {
   const baseClasses =
     "px-8 py-4 rounded-full font-semibold tracking-wide shadow-lg transition-transform duration-300";
-
   const styles = {
     primary: "bg-[#6A8159] text-white hover:scale-105 hover:shadow-xl",
     secondary:
       "bg-white border-2 border-[#6A8159] text-[#6A8159] hover:bg-[#6A8159] hover:text-white",
   };
-
-  const Component = as;
-
+  // Conditional rendering depending on 'as' prop:
+  if (as === 'a') {
+    return (
+      <a
+        href={href}
+        className={`${baseClasses} ${styles[variant]} ${className}`}
+      >
+        {children}
+      </a>
+    );
+  }
   return (
-    <Component
-      href={href}
+    <button
       type={type}
       className={`${baseClasses} ${styles[variant]} ${className}`}
     >
       {children}
-    </Component>
+    </button>
   );
 };
 
@@ -136,12 +130,28 @@ const SectionTitle: React.FC<{ children: React.ReactNode; className?: string }> 
 
 // --- PAGE SECTIONS ---
 
+const App: React.FC = () => (
+  <main style={{ backgroundColor: COLORS.cream, color: COLORS.text }} className="antialiased">
+    <NavBar />
+    <HeroSection />
+    <WelcomeSection />
+    <IncludedSection />
+    <FlowSection />
+    <RetreatRhythmSection />
+    <WhoShouldAttendSection />
+    <WhyBaliSection />
+    <RegistrationSection />
+    <Footer />
+  </main>
+);
+
+// continue…
 const HeroSection: React.FC = () => (
   <header className="relative h-screen min-h-[700px] w-full flex items-center justify-center text-white text-center bg-gray-800">
     <div className="absolute inset-0 bg-black/40 z-10"></div>
-    <img
-      src="https://image.pollinations.ai/prompt/serene%20Black%20woman%20meditating%20in%20lush%20Bali%20jungle,%20sunrise,%20soft%20light,%20calm%20aura"
-      alt="Serene Black woman meditating in a Bali jungle at sunrise"
+   <img
+      src="https://images.pexels.com/photos/235648/pexels-photo-235648.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=1920"
+      alt="Sunlit Bali rice terraces in Tegallalang – women’s healing retreat in Ubud"
       className="absolute inset-0 w-full h-full object-cover"
     />
 
@@ -168,18 +178,6 @@ const HeroSection: React.FC = () => (
   </header>
 );
 
-export {
-  COLORS,
-  INCLUDED_DATA,
-  EXPERIENCES_DATA,
-  RETREAT_RHYTHM_DATA,
-  WHO_ATTENDS_DATA,
-  CtaButton,
-  Section,
-  SectionTitle,
-  HeroSection,
-};
-
 const WelcomeSection: React.FC = () => (
   <Section id="welcome" className="relative bg-white overflow-hidden">
     <div className="max-w-5xl mx-auto px-6 flex flex-col items-center text-center">
@@ -193,13 +191,14 @@ const WelcomeSection: React.FC = () => (
       <div className="rounded-xl overflow-hidden shadow-lg w-full max-w-2xl mb-10 aspect-video">
         <iframe
           className="w-full h-full"
-          src="https://www.youtube.com/embed/VIDEO_ID_HERE"
+          src="https://www.youtube.com/embed/ysz5S6PUM-U" 
           title="A Message from Coach Melle"
-          frameBorder="0"
+          style={{ border: "0" }}
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           allowFullScreen
-        ></iframe>
+        />
       </div>
+
 
       {/* Quote + title */}
       <p className="italic text-lg mb-3" style={{ color: COLORS.green }}>
@@ -406,64 +405,45 @@ const WhyBaliSection: React.FC = () => (
 
 const RegistrationSection: React.FC = () => (
   <Section id="register" className="text-center relative">
-    {/* Background */}
-    <div className="absolute inset-0 bg-gradient-to-br from-[#FDF8F0] to-[#F8F6F2]"></div>
+    <div
+      className="absolute inset-0"
+      style={{
+        background: "linear-gradient(to bottom right, #FDF8F0, #F8F6F2)",
+      }}
+    ></div>
 
     <div className="relative z-10 p-10 md:p-16 rounded-3xl shadow-2xl max-w-3xl mx-auto bg-white/90 backdrop-blur">
-      {/* Headline */}
-      <h3 className="text-3xl md:text-4xl font-header-script text-[${COLORS.green}] mb-4">
+      <h3 className="text-3xl md:text-4xl font-header-script mb-4" style={{ color: COLORS.green }}>
         Step Into Your Second Spring 🌸
       </h3>
-      <p className="text-lg md:text-xl text-[${COLORS.text}] max-w-2xl mx-auto mb-6 leading-relaxed">
-        Registration opens <strong>October 2025</strong>.  
-        <span className="block mt-1 font-semibold text-[${COLORS.green}]">
+      <p className="text-lg md:text-xl mb-6 leading-relaxed" style={{ color: COLORS.text }}>
+        Registration opens <strong>October 2025</strong>.
+        <span className="block mt-1 font-semibold" style={{ color: COLORS.green }}>
           Only 20 spots available. Early-bird pricing ends soon.
         </span>
       </p>
-
-      {/* Countdown (optional dynamic element) */}
-      <div className="mb-6 text-sm text-[${COLORS.text}] italic">
-        ⏳ 38 days left to claim early-bird pricing
-      </div>
-
-      {/* Form */}
       <form className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+        <label htmlFor="email" className="sr-only">
+          Email Address
+        </label>
         <input
+          id="email"
           type="email"
           placeholder="Your email address"
-          className="px-6 py-4 rounded-full border border-[${COLORS.green}] bg-[#FDF8F0] focus:ring-2 focus:ring-[${COLORS.peach}] outline-none w-full sm:w-auto"
+          required
+          className="px-6 py-4 rounded-full border border-[#6A8159] bg-[#FDF8F0] focus:ring-2 focus:ring-[#F9A870] outline-none w-full sm:w-auto"
         />
-        <CtaButton
-          as="button"
-          type="submit"
-          variant="primary"
-          className="animate-pulse hover:animate-none"
-        >
+        <CtaButton as="button" type="submit" variant="primary">
           Save My Spot
         </CtaButton>
       </form>
-
-      <p className="mt-3 text-sm text-[#948B88]">
-        No payment today — just reserve your place.
-      </p>
-
-      {/* Secondary CTA */}
+      <p className="mt-3 text-sm text-[#948B88]">No payment today — just reserve your place.</p>
       <div className="mt-8">
-        <p className="text-sm mb-2 text-[${COLORS.text}]">
+        <p className="text-sm mb-2" style={{ color: COLORS.text }}>
           Still deciding? Get the full retreat guide:
         </p>
-        <CtaButton
-          as="a"
-          href="/retreat-info.pdf"
-          className="inline-flex items-center gap-2 border-2 px-6 py-3 rounded-full font-semibold text-sm tracking-wide transition-all duration-300"
-          style={{
-            borderColor: COLORS.green,
-            color: COLORS.green,
-            backgroundColor: "white",
-          }}
-        >
-          <DownloadIcon className="w-5 h-5" style={{ color: COLORS.green }} />
-          Download Retreat Guide
+        <CtaButton as="a" href="/retreat-guide" variant="secondary">
+          View Retreat Guide
         </CtaButton>
       </div>
     </div>
@@ -471,44 +451,55 @@ const RegistrationSection: React.FC = () => (
 );
 
 const Footer: React.FC = () => (
-  <footer style={{ backgroundColor: COLORS.green }} className="text-white/80 py-16">
-    <div className="container mx-auto px-6 md:px-8 text-center">
-      <div className="flex items-center justify-center space-x-3">
-        <BrandLogo className="w-10 h-10" />
-        <span className="text-2xl font-semibold tracking-wider uppercase">Second Spring Sisterhood</span>
-      </div>
-      <div className="flex justify-center space-x-6 my-8">
-        <a href="#" aria-label="Instagram" className="hover:text-white transition-colors">
-          <InstagramIcon className="w-6 h-6" />
-        </a>
-        <a href="#" aria-label="Facebook" className="hover:text-white transition-colors">
-          <FacebookIcon className="w-6 h-6" />
-        </a>
-      </div>
-      <p>
-        <a href="mailto:mel@melbyrdrocks.com" className="hover:text-white transition-colors">
+  <footer style={{ backgroundColor: COLORS.green }} className="text-white py-16">
+    <div className="container mx-auto px-6 md:px-8 grid md:grid-cols-3 gap-12">
+      <div className="flex flex-col items-center md:items-start text-center md:text-left">
+        <BrandLogo className="w-14 h-14 mb-3" />
+        <span className="text-2xl font-semibold tracking-wider uppercase">
+          Second Spring Sisterhood
+        </span>
+        <a href="mailto:mel@melbyrdrocks.com" className="mt-4 hover:text-white/80 transition-colors">
           mel@melbyrdrocks.com
         </a>
+        <div className="flex space-x-4 mt-4">
+          <a href="https://instagram.com" aria-label="Instagram">
+            <InstagramIcon className="w-6 h-6" />
+          </a>
+          <a href="https://facebook.com" aria-label="Facebook">
+            <FacebookIcon className="w-6 h-6" />
+          </a>
+        </div>
+      </div>
+      <div>
+        <h4 className="text-lg font-semibold mb-4">Explore</h4>
+        <ul className="space-y-2">
+          <li><a href="/" className="hover:text-white">Retreat Home</a></li>
+          <li><a href="/retreat-guide" className="hover:text-white">Retreat Guide</a></li>
+          <li><a href="https://melbyrdrocks.com" className="hover:text-white">Melle’s Coaching</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 className="text-lg font-semibold mb-4">Limited Spaces</h4>
+        <p className="mb-6">🌸 Only 20 spots for March 2026 — join us in Bali.</p>
+        <CtaButton as="a" href="#register" variant="secondary">
+          Save My Spot
+        </CtaButton>
+      </div>
+    </div>
+
+    {/* Bottom bar with contained width */}
+    <div className="mt-12 pt-8 border-t border-white/20 max-w-4xl mx-auto text-center text-sm text-white/60 px-4">
+      <p className="max-w-2xl mx-auto">
+        The Second Spring Sisterhood Retreat is a women’s retreat in Ubud, Bali — designed for rest, renewal, and reconnection.
       </p>
-      <p className="mt-8 text-sm text-white/50">Site designed with love in Bali.</p>
+      <p className="mt-4">
+        Site designed with love by{" "}
+        <a href="https://nafasi.co" target="_blank" rel="noopener noreferrer" className="hover:text-white">
+          Nafasi Connection
+        </a>.
+      </p>
     </div>
   </footer>
 );
-
-const App: React.FC = () => {
-  return (
-    <main className="antialiased" style={{ backgroundColor: COLORS.cream, color: COLORS.text }}>
-      <HeroSection />
-      <WelcomeSection />
-      <IncludedSection />
-      <FlowSection />
-      <RetreatRhythmSection />
-      <WhoShouldAttendSection />
-      <WhyBaliSection />
-      <RegistrationSection />
-      <Footer />
-    </main>
-  );
-};
 
 export default App;
