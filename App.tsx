@@ -414,7 +414,7 @@ const WhyBaliSection: React.FC = () => (
     </div>
     <div className="relative z-10 text-center max-w-5xl mx-auto">
       <EyebrowText className="mb-2">The Island That Holds You</EyebrowText>
-      <WhiteSectionTitle className="mb-6">Why Bali?</SectionTitle>
+      <WhiteSectionTitle className="mb-6">Why Bali?</WhiteSectionTitle>
       <p className="text-lg md:text-xl mb-12 max-w-3xl mx-auto leading-relaxed">
         Bali is more than a destination — it’s a portal. The island holds three gifts that make transformation inevitable:
       </p>
