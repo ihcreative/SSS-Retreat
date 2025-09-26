@@ -10,7 +10,6 @@ import React, { useState } from 'react';
 import NavBar from './components/NavBar'; 
 
 // --- CONFIG & DATA ---
-
 const COLORS = {
   cream: '#F8F6F2',
   green: '#6A8159',
@@ -581,12 +580,22 @@ const Footer: React.FC = () => (
         </CtaButton>
       </div>
       {/* Explore/Nav Block */}
-      <div className="flex flex-col items-center md:items-end">
-        <h3 className="font-header-script text-4xl mb-3 text-[#F8F6F2]">Explore</h3>
-        <a href="/" className="mb-2 font-bold text-white hover:underline">Retreat Home</a>
-        <a href="/retreat-guide" className="mb-2 font-bold text-white hover:underline">Retreat Guide</a>
-        <a href="http://melbyrdrocks.com" className="font-bold text-white hover:underline">Melle’s Coaching</a>
-      </div>
+     
+     <div className="flex flex-col items-center md:items-end">
+      <h3 className="font-header-script text-4xl mb-3 text-[#F8F6F2]">Explore</h3>
+      <a href="#retreat-guide" className="mb-2 font-bold text-white hover:underline">Retreat Guide</a>
+      <a href="http://melbyrdrocks.com" className="font-bold text-white hover:underline" target="_blank" rel="noopener noreferrer">
+        Melle’s Coaching
+      </a>
+      <a href="HomePage.tsx" className="mb-2 font-bold text-white hover:underline">Melle Home</a>
+      <a href="/HomePage" className="font-bold text-white hover:underline" target="_blank" rel="noopener noreferrer">
+        Melle’s Coaching
+      </a>
+      <a href="HomePage.html" className="font-bold text-white hover:underline" target="_blank" rel="noopener noreferrer">
+        Melle’s Coaching
+      </a>
+          </div>
+
     </div>
     {/* Attribution Bar (darker green for contrast) */}
     <div className="w-full bg-[#576a51] py-6 text-center text-sm text-white/90 px-2">
