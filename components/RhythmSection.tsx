@@ -96,7 +96,7 @@ const RetreatRhythmSection: React.FC = () => {
                     <div className="bg-green-100 p-2 rounded-full">
                       {item.icon}
                     </div>
-                    <h3 className="text-lg font-bold text-green-800">{item.title}</h3>
+                    <h3 className="text-3xl font-header-script mb-2 text-green-800">{item.title}</h3>
                   </div>
                   <p className="text-sm text-gray-600 leading-relaxed">{item.description}</p>
                 </div>

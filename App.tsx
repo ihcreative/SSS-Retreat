@@ -505,56 +505,59 @@ const RegistrationSection: React.FC = () => (
   </Section>
 );
 
+// Footer
 const Footer: React.FC = () => (
-  <footer style={{ backgroundColor: COLORS.green }} className="text-white py-16">
-    <div className="container mx-auto px-6 md:px-8 grid md:grid-cols-3 gap-12">
-      <div className="flex flex-col items-center md:items-start text-center md:text-left">
-        <BrandLogo className="w-14 h-14 mb-3" />
-        <span className="text-2xl font-semibold tracking-wider uppercase">
-          Second Spring Sisterhood
-        </span>
-        <a href="mailto:mel@melbyrdrocks.com" className="mt-4 hover:text-white/80 transition-colors">
-          mel@melbyrdrocks.com
-        </a>
-        <div className="flex space-x-4 mt-4">
-          <a href="https://instagram.com" aria-label="Instagram">
-            <InstagramIcon className="w-6 h-6" />
+  <footer className="bg-[#7C936C] w-full">
+    {/* Benediction section (contrast green) */}
+    <div className="w-full py-6 text-center bg-[#7C936C]">
+      <p className="italic font-serif text-lg md:text-xl text-[#F8F6F2]">
+        “You don’t need to wait for permission. Your Second Spring is already calling.”
+      </p>
+    </div>
+    {/* Three Column Full Width Section */}
+    <div className="w-full py-10 px-6 grid grid-cols-1 md:grid-cols-[1fr_2fr_1fr] items-center gap-8 bg-[#748962]">
+      {/* Coach Block */}
+      <div className="flex flex-col items-center md:items-start">
+        <img
+          src="/Melle.jpg"
+          alt="Coach Melle smiling portrait, founder of Bali's Second Spring Sisterhood women's retreat"
+          className="w-28 h-28 object-cover rounded-full shadow-lg mb-3"
+        />
+        <h3 className="font-header-script text-4xl mb-3 text-[#F8F6F2]">Coach Melle</h3>
+        <div className="flex flex-col gap-2 text-lg">
+          <a href="https://instagram.com/melbyrdrocks/" target="_blank" rel="noopener noreferrer"
+             className="font-bold text-white hover:underline">
+            🌸 Instagram
           </a>
-          <a href="https://facebook.com" aria-label="Facebook">
-            <FacebookIcon className="w-6 h-6" />
+          <a href="http://melbyrdrocks.com" target="_blank" rel="noopener noreferrer"
+             className="font-bold text-white hover:underline">
+            🌸 melbyrdrocks.com
           </a>
         </div>
       </div>
-      <div>
-        <h4 className="text-lg font-semibold mb-4">Explore</h4>
-        <ul className="space-y-2">
-          <li><a href="/" className="hover:text-white">Retreat Home</a></li>
-          <li><a href="/retreat-guide" className="hover:text-white">Retreat Guide</a></li>
-          <li><a href="https://melbyrdrocks.com" className="hover:text-white">Melle’s Coaching</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4 className="text-lg font-semibold mb-4">Limited Spaces</h4>
-        <p className="mb-6">🌸 Only 20 spots for March 2026 — join us in Bali.</p>
-        <CtaButton as="a" href="#register" variant="secondary">
-          Save My Spot
+      {/* Center CTA (wider, not max-w-md) */}
+      <div className="text-center flex flex-col items-center md:items-center justify-center">
+        <h2 className="text-3xl md:text-4xl font-bold leading-tight mb-7 text-[#F8F6F2] max-w-2xl">
+          🌸 20 women, one unforgettable circle. Will you be one of them?
+        </h2>
+        <CtaButton as="a" href="#register" variant="secondary" className="px-12 py-6 text-xl rounded-full mt-1 font-bold">
+          Save My Spot &rarr;
         </CtaButton>
       </div>
+      {/* Explore/Nav Block */}
+      <div className="flex flex-col items-center md:items-end">
+        <h3 className="font-header-script text-4xl mb-3 text-[#F8F6F2]">Explore</h3>
+        <a href="/" className="mb-2 font-bold text-white hover:underline">Retreat Home</a>
+        <a href="/retreat-guide" className="mb-2 font-bold text-white hover:underline">Retreat Guide</a>
+        <a href="http://melbyrdrocks.com" className="font-bold text-white hover:underline">Melle’s Coaching</a>
+      </div>
     </div>
-
-    {/* Bottom bar with contained width */}
-    <div className="mt-12 pt-8 border-t border-white/20 max-w-4xl mx-auto text-center text-sm text-white/60 px-4">
-      <p className="max-w-2xl mx-auto">
-        The Second Spring Sisterhood Retreat is a women’s retreat in Ubud, Bali — designed for rest, renewal, and reconnection.
-      </p>
-      <p className="mt-4">
-        Site designed with love by{" "}
-        <a href="https://nafasi.co" target="_blank" rel="noopener noreferrer" className="hover:text-white">
-          Nafasi Connection
-        </a>.
-      </p>
+    {/* Attribution Bar (darker green for contrast) */}
+    <div className="w-full bg-[#576a51] py-6 text-center text-sm text-white/90 px-2">
+      The Second Spring Sisterhood Retreat is a women’s retreat in Ubud, Bali — designed for rest, renewal, and reconnection.
+      <br />Site designed with love by Nafasi Connection.
     </div>
   </footer>
-);
+);  
 
 export default App;
