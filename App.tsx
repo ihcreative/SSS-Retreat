@@ -179,49 +179,62 @@ const HeroSection: React.FC = () => (
 );
 
 const WelcomeSection: React.FC = () => (
-  <Section id="welcome" className="relative bg-white overflow-hidden">
-    <div className="max-w-5xl mx-auto px-6 flex flex-col items-center text-center">
-      {/* Background shape / glow */}
+  <section id="welcome" className="relative bg-white overflow-hidden py-20 px-4">
+    <div className="max-w-5xl mx-auto flex flex-col items-center text-center">
+      {/* background glow */}
       <div
         className="absolute inset-0 opacity-60 rounded-full blur-3xl pointer-events-none -z-10"
-        style={{ backgroundColor: COLORS.cream }}
-      ></div>
+        style={{ backgroundColor: '#F8F6F2' }}
+      />
 
-      {/* Video placeholder */}
+      {/* Video */}
       <div className="rounded-xl overflow-hidden shadow-lg w-full max-w-2xl mb-10 aspect-video">
         <iframe
           className="w-full h-full"
-          src="https://www.youtube.com/embed/ysz5S6PUM-U" 
+          src="https://www.youtube.com/embed/ysz5S6PUM-U"
           title="A Message from Coach Melle"
-          style={{ border: "0" }}
+          style={{ border: 0 }}
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           allowFullScreen
         />
       </div>
 
-
-      {/* Quote + title */}
-      <p className="italic text-lg mb-3" style={{ color: COLORS.green }}>
+      {/* Quote */}
+      <p className="italic text-lg mb-3" style={{ color: '#6A8159' }}>
         “This is your second spring — and it’s right on time.”
       </p>
-      <SectionTitle className="mb-4">A Personal Invitation</SectionTitle>
 
-      {/* Body text */}
-      <p className="text-lg leading-relaxed max-w-3xl" style={{ color: COLORS.text }}>
-        I created this retreat because I know what it’s like to give, and give, and forget yourself.
-        I’ve coached women for over 20 years — CEOs, mothers, healers — and we all hit a point where the mask no longer fits.
-        <br /><br />
-        The Second Spring is more than a retreat. It’s a <em>reunion</em> with your truth. A sacred space to exhale, laugh, cry, and rise with other women who get it. You don’t need fixing. You need remembering.
-        <br /><br />
-        <strong>This is your moment. Come home to yourself in Bali.</strong> Bring the parts of you that the world told to be quiet — they’re the loudest ones calling you back.
-      </p>
+      {/* Header */}
+      <h2 className="font-header-script text-5xl md:text-6xl mb-4" style={{ color: '#6A8159' }}>
+        A Personal Invitation
+      </h2>
 
-      {/* Signature */}
-      <p className="mt-6 font-header-script text-xl" style={{ color: COLORS.green }}>
-        — Coach Melle
+      {/* Body */}
+      <div className="text-lg leading-relaxed max-w-3xl" style={{ color: '#5c5552' }}>
+        <p>
+          I created this retreat because I know what it’s like to give, and give, and forget yourself.
+          I’ve coached women for over 20 years — CEOs, mothers, healers — and we all hit a point where
+          the mask no longer fits.
+        </p>
+        <br />
+        <p>
+          The Second Spring is more than a retreat. It’s a <em>reunion</em> with your truth — a sacred
+          space to exhale, laugh, cry, and rise with other women who get it. You don’t need fixing.
+          You need remembering.
+        </p>
+        <br />
+        <p>
+          <strong>This is your moment. Come home to yourself in Bali.</strong> Bring the parts of you
+          that the world told to be quiet — they’re the loudest ones calling you back.
+        </p>
+      </div>
+
+      {/* Trust blurb (no links here) */}
+      <p className="mt-6 text-sm md:text-base opacity-90" style={{ color: '#6A8159' }}>
+        Led by Coach Melle, a transformational guide with 20+ years supporting women.
       </p>
     </div>
-  </Section>
+  </section>
 );
 
 const IncludedSection: React.FC = () => (
