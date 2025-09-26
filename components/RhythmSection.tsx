@@ -2,6 +2,9 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { CalendarIcon, LeafIcon, HeartIcon, SunIcon, MoonIcon } from 'lucide-react';
 
+// Add or import EyebrowText and SectionTitle here if defined elsewhere:
+// import { EyebrowText, SectionTitle } from '../path-to-components';
+
 const RHYTHM_DATA = [
   {
     icon: <SunIcon className="text-green-700 w-6 h-6" />,
@@ -30,22 +33,43 @@ const RHYTHM_DATA = [
   },
 ];
 
+const EyebrowText: React.FC<{ children: React.ReactNode; className?: string }> = ({
+  children,
+  className = '',
+}) => (
+  <p
+    className={`uppercase text-sm tracking-widest font-bold text-center ${className}`}
+    style={{ color: '#6A8159' }}
+  >
+    {children}
+  </p>
+);
+
+const SectionTitle: React.FC<{ children: React.ReactNode; className?: string }> = ({
+  children,
+  className = '',
+}) => (
+  <h2
+    className={`text-5xl md:text-6xl font-header-script text-center ${className}`}
+    style={{ color: '#6A8159' }}
+  >
+    {children}
+  </h2>
+);
+
 const RetreatRhythmSection: React.FC = () => {
   return (
     <section className="bg-[#FAF9F5] py-20 px-4">
       <div className="text-center max-w-2xl mx-auto mb-16">
-        <p className="text-sm uppercase tracking-widest text-green-700 font-semibold">Flow, Not Force</p>
-        <h2 className="text-4xl font-cursive text-green-900 mt-2 mb-4">The Rhythm of Your Day</h2>
+        <EyebrowText className="mb-2">Flow, Not Force</EyebrowText>
+        <SectionTitle className="mb-4">The Rhythm of Your Day</SectionTitle>
         <p className="text-gray-600 text-lg">
           You don’t need a rigid schedule. You need a rhythm that lets you breathe, connect, and bloom.
           We designed this retreat to flow with ease — balancing structure and softness to rejuvenate your whole being.
         </p>
       </div>
-
       <div className="relative max-w-4xl mx-auto">
-        {/* Center timeline line */}
         <div className="absolute left-1/2 transform -translate-x-1/2 h-full border-l-2 border-green-200"></div>
-
         <div className="flex flex-col gap-0">
           {RHYTHM_DATA.map((item, index) => (
             <motion.div
@@ -56,15 +80,12 @@ const RetreatRhythmSection: React.FC = () => {
               transition={{ duration: 0.6, delay: index * 0.15 }}
               viewport={{ once: true }}
             >
-              {/* Timeline dot */}
               <motion.div
                 className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2"
                 whileHover={{ scale: 1.2 }}
               >
                 <div className="w-4 h-4 bg-green-600 rounded-full border-4 border-white shadow animate-pulse"></div>
               </motion.div>
-
-              {/* Card */}
               <motion.div
                 className="w-1/2 px-6"
                 whileHover={{ scale: 1.03, y: -4 }}

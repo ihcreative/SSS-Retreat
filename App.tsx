@@ -129,6 +129,29 @@ const SectionTitle: React.FC<{ children: React.ReactNode; className?: string }> 
   </h2>
 );
 
+const WhiteSectionTitle: React.FC<{ children: React.ReactNode; className?: string }> = ({
+  children,
+  className = '',
+}) => (
+  <h2
+    className={`text-5xl md:text-6xl font-header-script text-white ${className}`}
+  >
+    {children}
+  </h2>
+);
+
+const EyebrowText: React.FC<{ children: React.ReactNode; className?: string }> = ({
+  children,
+  className = '',
+}) => (
+  <p
+    className={`uppercase text-sm tracking-widest font-bold text-center ${className}`}
+    style={{ color: COLORS.green }}
+  >
+    {children}
+  </p>
+);
+
 // --- PAGE SECTIONS ---
 
 const App: React.FC = () => (
@@ -147,7 +170,7 @@ const App: React.FC = () => (
   </main>
 );
 
-// continue…
+// MainPageContainers
 const HeroSection: React.FC = () => (
   <header className="relative h-screen min-h-[700px] w-full flex items-center justify-center text-white text-center bg-gray-800">
     <div className="absolute inset-0 bg-black/40 z-10"></div>
@@ -180,16 +203,14 @@ const HeroSection: React.FC = () => (
   </header>
 );
 
+// WelcomeSection
 const WelcomeSection: React.FC = () => (
   <section id="welcome" className="relative bg-white overflow-hidden py-20 px-4">
     <div className="max-w-5xl mx-auto flex flex-col items-center text-center">
-      {/* background glow */}
       <div
         className="absolute inset-0 opacity-60 rounded-full blur-3xl pointer-events-none -z-10"
         style={{ backgroundColor: '#F8F6F2' }}
       />
-
-      {/* Video */}
       <div className="rounded-xl overflow-hidden shadow-lg w-full max-w-2xl mb-10 aspect-video">
         <iframe
           className="w-full h-full"
@@ -200,18 +221,10 @@ const WelcomeSection: React.FC = () => (
           allowFullScreen
         />
       </div>
-
-      {/* Quote */}
       <p className="italic text-lg mb-3" style={{ color: '#6A8159' }}>
         “This is your second spring — and it’s right on time.”
       </p>
-
-      {/* Header */}
-      <h2 className="font-header-script text-5xl md:text-6xl mb-4" style={{ color: '#6A8159' }}>
-        A Personal Invitation
-      </h2>
-
-      {/* Body */}
+      <SectionTitle className="mb-4 text-center" >Come Home to Yourself in Bali</SectionTitle>
       <div className="text-lg leading-relaxed max-w-3xl" style={{ color: '#5c5552' }}>
         <p>
           I created this retreat because I know what it’s like to give, and give, and forget yourself.
@@ -230,8 +243,6 @@ const WelcomeSection: React.FC = () => (
           that the world told to be quiet — they’re the loudest ones calling you back.
         </p>
       </div>
-
-      {/* Trust blurb (no links here) */}
       <p className="mt-6 text-sm md:text-base opacity-90" style={{ color: '#6A8159' }}>
         Led by Coach Melle, a transformational guide with 20+ years supporting women.
       </p>
@@ -239,18 +250,16 @@ const WelcomeSection: React.FC = () => (
   </section>
 );
 
+// IncludedSection
 const IncludedSection: React.FC = () => (
   <Section id="included">
     <div className="text-center mb-16">
-      <p className="uppercase text-sm tracking-widest font-bold" style={{ color: COLORS.green }}>
-        All-Inclusive Care
-      </p>
+      <EyebrowText className="mb-2">All-Inclusive Care</EyebrowText>
       <SectionTitle>What’s Included</SectionTitle>
       <p className="mt-4 text-lg max-w-2xl mx-auto" style={{ color: COLORS.text }}>
         Everything you need to feel nourished, seen, and held — from the moment you arrive to the final hug goodbye.
       </p>
     </div>
-
     <div className="grid sm:grid-cols-2 gap-x-12 gap-y-10 max-w-5xl mx-auto">
       {INCLUDED_DATA.map((item) => (
         <div
@@ -291,12 +300,16 @@ const IncludedSection: React.FC = () => (
   </Section>
 );
 
+// FlowSection
 const FlowSection: React.FC = () => (
   <Section id="flow" className="bg-white">
-    <SectionTitle className="text-center mb-12">The Vibe</SectionTitle>
-    <p className="text-center text-lg max-w-2xl mx-auto mb-12" style={{ color: COLORS.text }}>
-      This isn’t a retreat you watch from the sidelines. It’s one you <em>feel</em> — in your breath, your body, and your spirit. These moments will hold you.
-    </p>
+    <div className="text-center mb-8">
+      <EyebrowText className="mb-2">We Know You Want That</EyebrowText>
+      <SectionTitle className="text-center mb-4">The Vibe</SectionTitle>
+      <p className="mt-4 text-lg max-w-2xl mx-auto" style={{ color: COLORS.text }}>
+        This isn’t a retreat you watch from the sidelines. It’s one you <em>feel</em> — in your breath, your body, and your spirit. These moments will hold you.
+      </p>
+    </div>
 
     <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
       {EXPERIENCES_DATA.slice(0, 3).map((item) => (
@@ -321,48 +334,46 @@ const FlowSection: React.FC = () => (
   </Section>
 );
 
+// WhoShouldAttendSection
 const WhoShouldAttendSection: React.FC = () => (
   <Section id="who-attends" className="relative bg-white">
     <div className="text-center max-w-4xl mx-auto">
-      <SectionTitle className="mb-6">This Retreat is For You If…</SectionTitle>
+      <EyebrowText className="mb-2">Is This Speaking To You?</EyebrowText>
+      <SectionTitle className="mb-6">This Retreat Is For You</SectionTitle>
       <p className="text-lg leading-relaxed mb-10" style={{ color: COLORS.text }}>
         You don’t need another to-do list. You need space to breathe, release, and remember yourself.  
-        If any of these feel true, the Sisterhood is calling you:
+        If any of these feel true, the Sisterhood is calling:
       </p>
-
-      <ul className="space-y-6 text-left mx-auto max-w-2xl">
-        <li className="flex items-start gap-4 group transition-all duration-300 hover:translate-x-2">
-          <HeartIcon className="w-7 h-7 mt-1 flex-shrink-0 group-hover:scale-110 transition-transform" style={{ color: COLORS.green }} />
-          <span className="text-lg" style={{ color: COLORS.text }}>
-            You’ve been giving so much that you’ve forgotten yourself.
-          </span>
-        </li>
-        <li className="flex items-start gap-4 group transition-all duration-300 hover:translate-x-2">
-          <SparklesIcon className="w-7 h-7 mt-1 flex-shrink-0 group-hover:scale-110 transition-transform" style={{ color: COLORS.green }} />
-          <span className="text-lg" style={{ color: COLORS.text }}>
-            You ache for deeper connection and true sisterhood.
-          </span>
-        </li>
-        <li className="flex items-start gap-4 group transition-all duration-300 hover:translate-x-2">
-          <RecycleIcon className="w-7 h-7 mt-1 flex-shrink-0 group-hover:scale-110 transition-transform" style={{ color: COLORS.green }} />
-          <span className="text-lg" style={{ color: COLORS.text }}>
-            You’re navigating a new season of life and long for renewal.
-          </span>
-        </li>
-        <li className="flex items-start gap-4 group transition-all duration-300 hover:translate-x-2">
-          <LeafIcon className="w-7 h-7 mt-1 flex-shrink-0 group-hover:scale-110 transition-transform" style={{ color: COLORS.green }} />
-          <span className="text-lg" style={{ color: COLORS.text }}>
-            You crave rituals, beauty, and a sacred pause to breathe again.
-          </span>
-        </li>
-        <li className="flex items-start gap-4 group transition-all duration-300 hover:translate-x-2">
-          <FlameIcon className="w-7 h-7 mt-1 flex-shrink-0 group-hover:scale-110 transition-transform" style={{ color: COLORS.green }} />
-          <span className="text-lg" style={{ color: COLORS.text }}>
-            You know it’s time to soften, release, and rise into your full bloom.
-          </span>
-        </li>
+      <ul className="space-y-8 text-left mx-auto max-w-2xl">
+        {[
+          {
+            Icon: HeartIcon,
+            text: "You’ve been giving so much that you’ve forgotten yourself.",
+          },
+          {
+            Icon: SparklesIcon,
+            text: "You ache for deeper connection and true sisterhood.",
+          },
+          {
+            Icon: RecycleIcon,
+            text: "You’re navigating a new season of life and long for renewal.",
+          },
+          {
+            Icon: LeafIcon,
+            text: "You crave rituals, beauty, and a sacred pause to breathe again.",
+          },
+          {
+            Icon: FlameIcon,
+            text: "You know it’s time to soften, release, and rise into your full bloom.",
+          },
+        ].map(({ Icon, text }, idx) => (
+          <li key={idx} className="relative flex items-start gap-4 p-6 rounded-3xl bg-[#F8F6F2] shadow-lg transition-all duration-300 group hover:translate-x-2">
+            <Icon className="w-7 h-7 mt-1 flex-shrink-0 text-[#6A8159] group-hover:scale-110 transition-transform" />
+            <span className="text-lg" style={{ color: COLORS.text }}>{text}</span>
+          </li>
+        ))}
       </ul>
-
+      
       <div className="mt-12">
         <CtaButton as="a" href="#register" variant="primary">
           Save My Spot
@@ -372,6 +383,7 @@ const WhoShouldAttendSection: React.FC = () => (
   </Section>
 );
 
+// WhyBaliSection
 const WhyBaliSection: React.FC = () => (
   <Section id="why-bali" className="relative text-white">
     {/* Background image with overlay */}
@@ -383,15 +395,12 @@ const WhyBaliSection: React.FC = () => (
       />
       <div className="absolute inset-0 bg-black/50"></div>
     </div>
-
-    {/* Content */}
     <div className="relative z-10 text-center max-w-5xl mx-auto">
-      <SectionTitle className="mb-6 text-white">Why Bali?</SectionTitle>
+      <EyebrowText className="mb-2">The Island That Holds You</EyebrowText>
+      <WhiteSectionTitle className="mb-6">Why Bali?</SectionTitle>
       <p className="text-lg md:text-xl mb-12 max-w-3xl mx-auto leading-relaxed">
         Bali is more than a destination — it’s a portal. The island holds three gifts that make transformation inevitable:
       </p>
-
-      {/* Three floating glass cards */}
       <div className="grid md:grid-cols-3 gap-8 mb-12">
         {[
           { title: "Energy", text: "Sacred waters, temple rituals, and a culture rooted in ceremony — Bali invites you to release and renew." },
@@ -409,8 +418,6 @@ const WhyBaliSection: React.FC = () => (
           </div>
         ))}
       </div>
-
-      {/* Consistent CTA */}
       <CtaButton as="a" href="#register" variant="primary">
         Save My Spot
       </CtaButton>
@@ -418,21 +425,25 @@ const WhyBaliSection: React.FC = () => (
   </Section>
 );
 
+// RetreatGuide
 const RetreatGuide: React.FC = () => (
   <Section id="retreat-guide" className="bg-white text-center py-20 px-4">
     <div className="max-w-2xl mx-auto">
-      <h2 className="font-header-script text-5xl mb-6 text-[#6A8159]">
-        ✨ Your Second Spring Retreat Guide
-      </h2>
+      <EyebrowText className="mb-2">Your Journey Begins Here</EyebrowText>
+      <SectionTitle className="mb-6 text-[#6A8159]">
+        Your Second Spring<br/> 
+        Retreat Guide
+      </SectionTitle>
       <p className="mb-8 text-lg leading-relaxed text-[#5c5552]">
         We’ve prepared something special for you. The Second Spring Retreat Guide is more than an itinerary — it’s a taste of the journey awaiting you in Bali. Inside, you’ll find:
       </p>
-      <ul className="mb-10 text-left text-lg max-w-md mx-auto space-y-3">
+      <ul className="mb-10 text-center text-lg max-w-lg mx-auto space-y-3">
         <li>🌸 A welcome letter from Coach Melle</li>
         <li>🌸 A day-in-the-life retreat rhythm</li>
         <li>🌸 Reflection prompts to begin your transformation now</li>
         <li>🌸 A soulful Bali packing list</li>
       </ul>
+      <p>Begin now — your journey starts the moment you open it.</p>
       <div className="mt-8">
         <a
           href="/The-Second-Spring-Retreat-Guide.pdf"
@@ -447,54 +458,47 @@ const RetreatGuide: React.FC = () => (
   </Section>
 );
 
+// RegistrationSection
 const RegistrationSection: React.FC = () => (
   <Section id="register" className="text-center relative">
     <div
       className="absolute inset-0"
       style={{
-        background: "linear-gradient(to bottom right, #FDF8F0, #F8F6F2)",
+        background: "linear-gradient(to bottom right, #FDF0E6, #F7F3E5)",
       }}
     ></div>
-
-    <div className="relative z-10 p-10 md:p-16 rounded-3xl shadow-2xl max-w-3xl mx-auto bg-white/90 backdrop-blur">
-      {/* Script headline */}
-      <h3 className="text-5xl md:text-6xl font-header-script mb-4" style={{ color: COLORS.green }}>
-        Step Into Your Second Spring 🌸
-      </h3>
-
-      {/* Bold sans-serif subhead */}
-      <p className="text-2xl md:text-3xl font-bold mb-6 leading-relaxed" style={{ color: COLORS.text }}>
-        Registration Now Open – October 2025.
+    <div className="relative z-10 p-16 rounded-3xl shadow-2xl max-w-screen-lg mx-auto bg-white/90 backdrop-blur">
+      <SectionTitle className="mb-2 text-center">
+        Step Into Your Spring
+      </SectionTitle>
+      <p className="text-4xl font-bold mb-8" style={{ color: '#3E4A36' }}>
+        Registration Now Open – October 2025 
       </p>
-
-      {/* Urgency + bonus messages */}
-      <p className="mb-4 text-lg md:text-xl font-semibold" style={{ color: COLORS.green }}>
-        Register by [DATE] to save $500.
+      <p className="text-xl font-semibold mb-1" style={{ color: '#4A6A43' }}>
+        🌸 Register by <em>DATE</em> to save $500. 🌸
       </p>
-      <p className="mb-6 text-lg md:text-xl font-semibold" style={{ color: COLORS.green }}>
+      <p className="text-xl font-semibold mb-6" style={{ color: '#4A6A43' }}>
         First 5 women receive a private 1:1 coaching session.
       </p>
-      <p className="mb-12 text-lg md:text-xl font-semibold" style={{ color: COLORS.text }}>
+      <p className="text-lg mb-8" style={{ color: '#555' }}>
         Only 20 spots total – don’t wait.
       </p>
-
-      {/* Form */}
-      <form className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-        <label htmlFor="email" className="sr-only">Email Address</label>
+      <form className="flex flex-col sm:flex-row justify-center items-center gap-4 max-w-xl mx-auto">
         <input
-          id="email"
           type="email"
-          placeholder="Your email address"
+          id="email"
           required
-          className="px-6 py-4 rounded-full border border-[#6A8159] bg-[#FDF8F0] focus:ring-2 focus:ring-[#F9A870] outline-none w-full sm:w-auto"
+          placeholder="Your email address"
+          className="flex-grow px-6 py-5 rounded-full border border-[#6A8159] bg-white text-lg focus:outline-none focus:ring-2 focus:ring-[#F9C871]"
         />
-        <CtaButton as="button" type="submit" variant="primary" className="text-xl font-bold px-10 py-5 hover:shadow-2xl transition-all">
+        <button
+          type="submit"
+          className="px-10 py-5 rounded-full bg-[#6A8159] text-white font-extrabold text-xl shadow-lg hover:bg-[#4A623C] transition-colors"
+        >
           Save My Spot
-        </CtaButton>
+        </button>
       </form>
-
-      {/* Trust line */}
-      <p className="mt-6 text-lg font-semibold text-[#948B88]">
+      <p className="mt-8 text-center font-semibold text-[#444] text-lg">
         No payment today — just reserve your place.
       </p>
     </div>
