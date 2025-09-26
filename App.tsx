@@ -6,6 +6,7 @@ import {
   FlameIcon, HeartIcon, SparklesIcon, RecycleIcon, InstagramIcon, FacebookIcon
 } from './components/Icons';
 import RetreatGuide from './components/RetreatGuide';
+import React, { useState } from 'react';
 import NavBar from './components/NavBar'; 
 
 // --- CONFIG & DATA ---
@@ -69,6 +70,9 @@ const EXPERIENCES_DATA: Experience[] = [
 
 // --- REUSABLE COMPONENTS ---
 
+
+
+
 const CtaButton: React.FC<{
   children: React.ReactNode;
   variant?: 'primary' | 'secondary';
@@ -86,17 +90,28 @@ const CtaButton: React.FC<{
     secondary:
       "bg-white border-2 border-[#6A8159] text-[#6A8159] hover:bg-[#6A8159] hover:text-white",
   };
-  // Conditional rendering depending on 'as' prop:
-  if (as === 'a') {
+
+  const handleSmoothScroll = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    if (href && href.startsWith('#')) {
+      e.preventDefault();
+      const id = href.replace('#', '');
+      const el = document.getElementById(id);
+      if (el) el.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
+  if (as === 'a' && href) {
     return (
       <a
         href={href}
+        onClick={href.startsWith('#') ? handleSmoothScroll : undefined}
         className={`${baseClasses} ${styles[variant]} ${className}`}
       >
         {children}
       </a>
     );
   }
+
   return (
     <button
       type={type}
@@ -106,6 +121,8 @@ const CtaButton: React.FC<{
     </button>
   );
 };
+
+
 
 const Section: React.FC<{ id: string; children: React.ReactNode; className?: string }> = ({
   id,
@@ -446,7 +463,7 @@ const RetreatGuide: React.FC = () => (
       <p>Begin now — your journey starts the moment you open it.</p>
       <div className="mt-8">
         <a
-          href="/The-Second-Spring-Retreat-Guide.pdf"
+          href="/The-Second-Spring-Retreat-Guide.pdf" 
           target="_blank"
           rel="noopener noreferrer"
           className="inline-block bg-[#6A8159] text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-[#5a6e4a] transition-colors"
@@ -458,52 +475,71 @@ const RetreatGuide: React.FC = () => (
   </Section>
 );
 
-// RegistrationSection
-const RegistrationSection: React.FC = () => (
-  <Section id="register" className="text-center relative">
-    <div
-      className="absolute inset-0"
-      style={{
-        background: "linear-gradient(to bottom right, #FDF0E6, #F7F3E5)",
-      }}
-    ></div>
-    <div className="relative z-10 p-16 rounded-3xl shadow-2xl max-w-screen-lg mx-auto bg-white/90 backdrop-blur">
-      <SectionTitle className="mb-2 text-center">
-        Step Into Your Spring
-      </SectionTitle>
-      <p className="text-4xl font-bold mb-8" style={{ color: '#3E4A36' }}>
-        Registration Now Open – October 2025 
-      </p>
-      <p className="text-xl font-semibold mb-1" style={{ color: '#4A6A43' }}>
-        🌸 Register by <em>DATE</em> to save $500. 🌸
-      </p>
-      <p className="text-xl font-semibold mb-6" style={{ color: '#4A6A43' }}>
-        First 5 women receive a private 1:1 coaching session.
-      </p>
-      <p className="text-lg mb-8" style={{ color: '#555' }}>
-        Only 20 spots total – don’t wait.
-      </p>
-      <form className="flex flex-col sm:flex-row justify-center items-center gap-4 max-w-xl mx-auto">
-        <input
-          type="email"
-          id="email"
-          required
-          placeholder="Your email address"
-          className="flex-grow px-6 py-5 rounded-full border border-[#6A8159] bg-white text-lg focus:outline-none focus:ring-2 focus:ring-[#F9C871]"
-        />
-        <button
-          type="submit"
-          className="px-10 py-5 rounded-full bg-[#6A8159] text-white font-extrabold text-xl shadow-lg hover:bg-[#4A623C] transition-colors"
-        >
-          Save My Spot
-        </button>
-      </form>
-      <p className="mt-8 text-center font-semibold text-[#444] text-lg">
-        No payment today — just reserve your place.
-      </p>
-    </div>
-  </Section>
-);
+// RegistrationSaveMySpot
+const RegistrationSection: React.FC = () => {
+  const [email, setEmail] = useState('');
+  const [submitted, setSubmitted] = useState(false);
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    // You can add actual form submission logic here (e.g., API call)
+    // For now, simulate success:
+    setSubmitted(true);
+  };
+
+  return (
+    <Section id="register" className="text-center relative">
+      <div
+        className="absolute inset-0"
+        style={{
+          background: "linear-gradient(to bottom right, #FDF0E6, #F7F3E5)",
+        }}
+      ></div>
+      <div className="relative z-10 p-16 rounded-3xl shadow-2xl max-w-screen-lg mx-auto bg-white/90 backdrop-blur">
+        <SectionTitle className="mb-2 text-center">
+          Step Into Your Spring
+        </SectionTitle>
+        <p className="text-4xl font-bold mb-8" style={{ color: '#3E4A36' }}>
+          Registration Now Open – October 2025 
+        </p>
+        <p className="text-xl font-semibold mb-1" style={{ color: '#4A6A43' }}>
+          🌸 Register by <em>DATE</em> to save $500. 🌸
+        </p>
+        <p className="text-xl font-semibold mb-6" style={{ color: '#4A6A43' }}>
+          First 5 women receive a private 1:1 coaching session.
+        </p>
+        <p className="text-lg mb-8" style={{ color: '#555' }}>
+          Only 20 spots total – don’t wait.
+        </p>
+        <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row justify-center items-center gap-4 max-w-xl mx-auto">
+          <input
+            type="email"
+            id="email"
+            required
+            value={email}
+            onChange={e => setEmail(e.target.value)}
+            placeholder="Your email address"
+            className="flex-grow px-6 py-5 rounded-full border border-[#6A8159] bg-white text-lg focus:outline-none focus:ring-2 focus:ring-[#F9C871]"
+          />
+          <button
+            type="submit"
+            className="px-10 py-5 rounded-full bg-[#6A8159] text-white font-extrabold text-xl shadow-lg hover:bg-[#4A623C] transition-colors"
+          >
+            Save My Spot
+          </button>
+        </form>
+        {submitted && (
+          <p
+            className="mt-6 font-semibold text-lg"
+            style={{ color: '#6A8159', fontFamily: 'inherit' }}
+          >
+            🌸 Thanks! Your spot is saved. Check your inbox for next steps.
+          </p>
+        )}
+      </div>
+    </Section>
+  );
+};
 
 // Footer
 const Footer: React.FC = () => (

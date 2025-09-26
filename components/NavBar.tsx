@@ -33,9 +33,9 @@ const NavBar: React.FC = () => {
 
           {/* CTA Button - pill shape, branded color, larger padding, hover darker */}
           <a 
-            href="#save-my-spot" 
-            onClick={e => handleScroll(e, 'save-my-spot')}
-            className="bg-[#6A8159] text-white px-6 py-2 rounded-full font-semibold text-sm hover:bg-[#587047] transition"
+            href="#register" 
+            onClick={e => handleScroll(e, 'register')}
+            className="bg-[#6A8159] text-white px-8 py-4 rounded-full font-semibold text-sm hover:bg-[#587047] transition"
             style={{ minWidth: '140px' }}
           >
             Save My Spot
