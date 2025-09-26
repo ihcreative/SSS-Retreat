@@ -11,46 +11,36 @@ const NavBar: React.FC = () => {
   };
 
   return (
-    <nav className="fixed top-0 left-0 w-full bg-white/80 backdrop-blur-md shadow-sm z-50">
-      <div className="container mx-auto px-6 md:px-8 flex items-center justify-between py-4">
+    <nav className="fixed top-0 left-0 w-full bg-white border-b border-sage-200 z-50" style={{ height: '80px' }}>
+      <div className="container mx-auto px-6 md:px-8 flex items-center justify-between h-full">
         
-        {/* Logo */}
-        <a href="/" className="flex items-center space-x-2">
-          <span className="font-header-script text-2xl text-[#6A8159]">
+        {/* Logo: increased size ~12%, vertically aligned */}
+        <a href="/" className="flex items-center" style={{ lineHeight: '1' }}>
+          <span className="font-header-script text-[2.25rem] text-[#6A8159] leading-none">
             Second Spring Sisterhood
           </span>
         </a>
 
-        {/* Links */}
-        <ul className="hidden md:flex space-x-8 text-sm font-semibold text-[#5c5552] tracking-wide">
-          <li>
-            <a 
-              href="#retreat-home" 
-              onClick={e => handleScroll(e, 'retreat-home')}
-              className="hover:text-[#F9A870] transition"
-            >
-              Retreat Home
-            </a>
-          </li>
-          <li>
-            <a 
-              href="#retreat-guide" 
-              onClick={e => handleScroll(e, 'retreat-guide')}
-              className="hover:text-[#F9A870] transition"
-            >
-              Retreat Guide
-            </a>
-          </li>
-        </ul>
+        <div className="hidden md:flex items-center space-x-6">
+          {/* Retreat Guide link - medium weight, hover underline, right next to button */}
+          <a 
+            href="#retreat-guide" 
+            onClick={e => handleScroll(e, 'retreat-guide')}
+            className="text-sm font-medium text-[#5c5552] hover:underline transition"
+          >
+            Retreat Guide
+          </a>
 
-        {/* CTA Button */}
-        <a 
-          href="#save-my-spot" 
-          onClick={e => handleScroll(e, 'save-my-spot')}
-          className="hidden md:inline-block bg-[#F9A870] text-white px-4 py-2 rounded shadow hover:bg-[#e0894a] transition font-semibold"
-        >
-          Save My Spot
-        </a>
+          {/* CTA Button - pill shape, branded color, larger padding, hover darker */}
+          <a 
+            href="#save-my-spot" 
+            onClick={e => handleScroll(e, 'save-my-spot')}
+            className="bg-[#6A8159] text-white px-6 py-2 rounded-full font-semibold text-sm hover:bg-[#587047] transition"
+            style={{ minWidth: '140px' }}
+          >
+            Save My Spot
+          </a>
+        </div>
       </div>
     </nav>
   );
