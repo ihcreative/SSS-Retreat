@@ -5,6 +5,7 @@ import {
   BrandLogo, CheckCircleIcon, SpaIcon, LeafIcon, MessageCircleIcon,
   FlameIcon, HeartIcon, SparklesIcon, RecycleIcon, InstagramIcon, FacebookIcon
 } from './components/Icons';
+import RetreatGuide from './components/RetreatGuide';
 import NavBar from './components/NavBar'; 
 
 // --- CONFIG & DATA ---
@@ -140,6 +141,7 @@ const App: React.FC = () => (
     <RetreatRhythmSection />
     <WhoShouldAttendSection />
     <WhyBaliSection />
+    <RetreatGuide />
     <RegistrationSection />
     <Footer />
   </main>
@@ -416,6 +418,35 @@ const WhyBaliSection: React.FC = () => (
   </Section>
 );
 
+const RetreatGuide: React.FC = () => (
+  <Section id="retreat-guide" className="bg-white text-center py-20 px-4">
+    <div className="max-w-2xl mx-auto">
+      <h2 className="font-header-script text-5xl mb-6 text-[#6A8159]">
+        ✨ Your Second Spring Retreat Guide
+      </h2>
+      <p className="mb-8 text-lg leading-relaxed text-[#5c5552]">
+        We’ve prepared something special for you. The Second Spring Retreat Guide is more than an itinerary — it’s a taste of the journey awaiting you in Bali. Inside, you’ll find:
+      </p>
+      <ul className="mb-10 text-left text-lg max-w-md mx-auto space-y-3">
+        <li>🌸 A welcome letter from Coach Melle</li>
+        <li>🌸 A day-in-the-life retreat rhythm</li>
+        <li>🌸 Reflection prompts to begin your transformation now</li>
+        <li>🌸 A soulful Bali packing list</li>
+      </ul>
+      <div className="mt-8">
+        <a
+          href="/The-Second-Spring-Retreat-Guide.pdf"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-block bg-[#6A8159] text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-[#5a6e4a] transition-colors"
+        >
+          👉 Download the Retreat Guide PDF
+        </a>
+      </div>
+    </div>
+  </Section>
+);
+
 const RegistrationSection: React.FC = () => (
   <Section id="register" className="text-center relative">
     <div
@@ -426,19 +457,30 @@ const RegistrationSection: React.FC = () => (
     ></div>
 
     <div className="relative z-10 p-10 md:p-16 rounded-3xl shadow-2xl max-w-3xl mx-auto bg-white/90 backdrop-blur">
-      <h3 className="text-3xl md:text-4xl font-header-script mb-4" style={{ color: COLORS.green }}>
+      {/* Script headline */}
+      <h3 className="text-5xl md:text-6xl font-header-script mb-4" style={{ color: COLORS.green }}>
         Step Into Your Second Spring 🌸
       </h3>
-      <p className="text-lg md:text-xl mb-6 leading-relaxed" style={{ color: COLORS.text }}>
-        Registration opens <strong>October 2025</strong>.
-        <span className="block mt-1 font-semibold" style={{ color: COLORS.green }}>
-          Only 20 spots available. Early-bird pricing ends soon.
-        </span>
+
+      {/* Bold sans-serif subhead */}
+      <p className="text-2xl md:text-3xl font-bold mb-6 leading-relaxed" style={{ color: COLORS.text }}>
+        Registration Now Open – October 2025.
       </p>
+
+      {/* Urgency + bonus messages */}
+      <p className="mb-4 text-lg md:text-xl font-semibold" style={{ color: COLORS.green }}>
+        Register by [DATE] to save $500.
+      </p>
+      <p className="mb-6 text-lg md:text-xl font-semibold" style={{ color: COLORS.green }}>
+        First 5 women receive a private 1:1 coaching session.
+      </p>
+      <p className="mb-12 text-lg md:text-xl font-semibold" style={{ color: COLORS.text }}>
+        Only 20 spots total – don’t wait.
+      </p>
+
+      {/* Form */}
       <form className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-        <label htmlFor="email" className="sr-only">
-          Email Address
-        </label>
+        <label htmlFor="email" className="sr-only">Email Address</label>
         <input
           id="email"
           type="email"
@@ -446,19 +488,15 @@ const RegistrationSection: React.FC = () => (
           required
           className="px-6 py-4 rounded-full border border-[#6A8159] bg-[#FDF8F0] focus:ring-2 focus:ring-[#F9A870] outline-none w-full sm:w-auto"
         />
-        <CtaButton as="button" type="submit" variant="primary">
+        <CtaButton as="button" type="submit" variant="primary" className="text-xl font-bold px-10 py-5 hover:shadow-2xl transition-all">
           Save My Spot
         </CtaButton>
       </form>
-      <p className="mt-3 text-sm text-[#948B88]">No payment today — just reserve your place.</p>
-      <div className="mt-8">
-        <p className="text-sm mb-2" style={{ color: COLORS.text }}>
-          Still deciding? Get the full retreat guide:
-        </p>
-        <CtaButton as="a" href="/retreat-guide" variant="secondary">
-          View Retreat Guide
-        </CtaButton>
-      </div>
+
+      {/* Trust line */}
+      <p className="mt-6 text-lg font-semibold text-[#948B88]">
+        No payment today — just reserve your place.
+      </p>
     </div>
   </Section>
 );
