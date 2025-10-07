@@ -11,12 +11,12 @@ import { COLORS } from './config';
 // --- CONFIG & DATA ---
 const INCLUDED_DATA: IncludedItem[] = [
   {
-    text: "Luxury accommodations in a private jungle villa",
+    text: "Accommodations in a private jungle villa",
     subtext: "Wake up where the jungle sings your name.",
     featured: true,
   },
   {
-    text: "Daily organic, locally-sourced meals",
+    text: "Daily locally-sourced meals",
     subtext: "Nourish yourself with every bite.",
   },
   {
@@ -24,15 +24,15 @@ const INCLUDED_DATA: IncludedItem[] = [
     subtext: "Come home to the parts of you that feel forgotten.",
   },
   {
-    text: "A guided temple excursion and nature hike",
+    text: "A guided water blessing at a local waterfall",
     subtext: "Walk the sacred paths of Bali with intention.",
   },
   {
-    text: "Professional photoshoot to capture your glow",
+    text: "Professional photographer to capture your glow",
     subtext: "Because your radiance deserves to be witnessed.",
   },
   {
-    text: "A curated welcome gift with local artisan crafts",
+    text: "A curated welcome gift to kick off your journey",
     subtext: "A blessing from the island to take home.",
   },
 ];
@@ -436,7 +436,7 @@ const RegistrationSection: React.FC = () => {
     </SectionTitle>
 
     <p className="text-lg max-w-3xl mx-auto mb-10" style={{ color: COLORS.primaryText }}>
-      Registration opens October 2025. Spaces are limited to only 20 women. 
+      Registration opens late October 2025. Spaces are limited to only 20 women. 
       This is your moment to step into renewal, community, and your Second Spring.
     </p>
 
@@ -450,18 +450,7 @@ const RegistrationSection: React.FC = () => {
       >
         Save My Spot
       </a>
-      <a
-        href="#retreat-guide"
-        className="px-10 py-5 rounded-full text-white font-bold text-xl hover:bg-[#E68A54] transition-all duration-300 transform hover:scale-105 hover:shadow-2xl hover:-translate-y-1"
-        style={{ backgroundColor: COLORS.rose }}
-      >
-        View Retreat Guide
-      </a>
     </div>
-
-    <p className="mt-10 text-base italic" style={{ color: COLORS.plum }}>
-      🪷 “This isn’t just a getaway. It’s a homecoming.” 🪷
-    </p>
   </div>
 </Section>
   );
