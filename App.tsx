@@ -6,17 +6,9 @@ import {
   SparklesIcon, InstagramIcon, MountainIcon
 } from './components/Icons';
 import NavBar from './components/NavBar'; 
+import { COLORS } from './config';
 
 // --- CONFIG & DATA ---
-const COLORS = {
-  plum: "#6A8159",
-  rose: "#F9A870",
-  warmBeige: "#FDF8F0",
-  softLavender: "#D8C7E5",
-  primaryText: "#99725F",
-  warmGray: "#C3BCAF",
-};
-
 const INCLUDED_DATA: IncludedItem[] = [
   {
     text: "Luxury accommodations in a private jungle villa",
@@ -93,7 +85,7 @@ const CtaButton: React.FC<{
   const baseClasses =
     "px-8 py-4 rounded-full font-bold tracking-wide shadow-lg transition-all duration-300 transform text-white";
   const hoverClasses = {
-    primary: "hover:bg-[#5A6C4F] hover:scale-105 hover:shadow-2xl hover:-translate-y-1",
+    primary: "hover:bg-[#4d2053] hover:scale-105 hover:shadow-2xl hover:-translate-y-1",
     secondary: "hover:bg-[#E68A54] hover:scale-105 hover:shadow-2xl hover:-translate-y-1",
   };
   const backgroundStyle = {
@@ -418,7 +410,7 @@ const RetreatGuideSection: React.FC = () => (
           href="/The-Second-Spring-Retreat-Guide.pdf" 
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-block text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-[#5A6C4F] transition-colors"
+          className="inline-block text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-[#4d2053] transition-colors"
           style={{ backgroundColor: COLORS.plum }}
         >
           👉 Download the Retreat Guide
@@ -453,7 +445,7 @@ const RegistrationSection: React.FC = () => {
         href="https://forms.gle/utvALEbGc1ihbFiZA"
         target="_blank"
         rel="noopener noreferrer"
-        className="px-10 py-5 rounded-full text-white font-extrabold text-xl shadow-lg hover:bg-[#5A6C4F] transition-all duration-300 transform hover:scale-105 hover:shadow-2xl hover:-translate-y-1"
+        className="px-10 py-5 rounded-full text-white font-extrabold text-xl shadow-lg hover:bg-[#4d2053] transition-all duration-300 transform hover:scale-105 hover:shadow-2xl hover:-translate-y-1"
         style={{ backgroundColor: COLORS.plum }}
       >
         Save My Spot

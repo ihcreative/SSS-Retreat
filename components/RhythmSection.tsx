@@ -1,15 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { CalendarIcon, LeafIcon, HeartIcon, SunIcon, MoonIcon } from './Icons';
-
-const COLORS = {
-  plum: "#6A8159",
-  rose: "#F9A870",
-  warmBeige: "#FDF8F0",
-  softLavender: "#D8C7E5",
-  primaryText: "#99725F",
-  warmGray: "#C3BCAF",
-};
+import { COLORS } from '../config';
 
 const RHYTHM_DATA = [
   {

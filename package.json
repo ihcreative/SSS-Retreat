@@ -1,5 +1,5 @@
 {
-  "name": "second-spring-sisterhood-style-guide",
+  "name": "second-spring-sisterhood-retreat:-original-concept",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -12,8 +12,7 @@
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
     "lucide-react": "^0.544.0",
-    "framer-motion": "^12.23.19",
-    "react-router-dom": "^7.9.2"
+    "framer-motion": "^12.23.19"
   },
   "devDependencies": {
     "@types/node": "^22.14.0",
