@@ -262,7 +262,6 @@ const WelcomeSection: React.FC = () => (
 const IncludedSection: React.FC = () => (
   <Section id="included">
     <div className="text-center mb-16">
-      <EyebrowText className="mb-2">All-Inclusive Care</EyebrowText>
       <SectionTitle>What’s Included</SectionTitle>
       <p className="mt-4 text-lg max-w-2xl mx-auto" style={{ color: COLORS.primaryText }}>
         Your investment includes everything you need to feel nourished and inspired: accommodations in a private villa, daily meals, all workshops and healing sessions, excursions, and retreat materials.
@@ -312,7 +311,6 @@ const IncludedSection: React.FC = () => (
 const FlowSection: React.FC = () => (
   <Section id="flow" className="bg-white">
     <div className="text-center mb-8">
-      <EyebrowText className="mb-2">We Know You Want That</EyebrowText>
       <SectionTitle className="text-center mb-4">The Vibe</SectionTitle>
       <p className="mt-4 text-lg max-w-2xl mx-auto" style={{ color: COLORS.primaryText }}>
         Your time in Bali will be a journey of profound flow and connection.
@@ -346,7 +344,6 @@ const FlowSection: React.FC = () => (
 const WhoShouldAttendSection: React.FC = () => (
   <Section id="who-attends" className="relative bg-white">
     <div className="text-center max-w-4xl mx-auto">
-      <EyebrowText className="mb-2">Is This Speaking To You?</EyebrowText>
       <SectionTitle className="mb-6">This Retreat Is For You</SectionTitle>
       <p className="text-lg mb-10 max-w-3xl mx-auto" style={{ color: COLORS.primaryText }}>
         This retreat is for the woman who has walked through life’s storms, learned her lessons, and is now ready to rise into her power with grace and joy. It’s for the woman who knows more is waiting after she releases old stories, silences limiting beliefs, and steps boldly into peace, purpose, and possibility. If your spirit longs to be poured into, if you’re ready to invest wholeheartedly in your mind, body, and spirit, and if you desire the embrace of a circle of sisters who see you, honor you, and celebrate your growth—this Retreat is for YOU.
