@@ -7,6 +7,7 @@ import {
 } from './components/Icons';
 import NavBar from './components/NavBar'; 
 import { COLORS } from './config';
+import { Calendar1Icon } from 'lucide-react';
 
 // --- CONFIG & DATA ---
 const INCLUDED_DATA: IncludedItem[] = [
@@ -42,7 +43,7 @@ const EXPERIENCES_DATA: Experience[] = [
     icon: SpaIcon,
     title: "Morning Rituals",
     description: "Start each day with movement, affirmations, and meditation to align your mind, body, and spirit.",
-    image: "https://image.pollinations.ai/prompt/serene%20Black%20woman%20meditating%20in%20lush%20Bali%20jungle,%20sunrise,%20soft%20light,%20calm%20aura",
+    image: "Morning Ritual.jpg",
   },
   {
     icon: LeafIcon,
@@ -60,13 +61,19 @@ const EXPERIENCES_DATA: Experience[] = [
     icon: SparklesIcon,
     title: "Sacred Ceremonies",
     description: "Reconnect with your inner self through traditional Balinese blessings.",
-    image: "https://image.pollinations.ai/prompt/Balinese%20woman%20in%20sacred%20water%20temple%20ceremony,%20serene,%20spiritual",
+    image: "Sacred Ceremonies.jpg",
   },
   {
     icon: MountainIcon,
     title: "Group Excursions",
     description: "Explore Bali's natural beauty with guided waterfall visits, the Bali swing, and optional beach clubs.",
-    image: "https://image.pollinations.ai/prompt/woman%20on%20a%20jungle%20swing%20in%20Bali,%20overlooking%20lush%20rice%20terraces",
+    image: "Group excursion.jpg",
+  },
+  {
+    icon: Calendar1Icon,
+    title: "Self-Reflection with Journaling",
+    description: "Document your warm and cool experiences. Learn and grow from your authoring.",
+    image: "SSS Journal.jpg",
   },
 ];
 
@@ -202,7 +209,7 @@ const HeroSection: React.FC = () => (
     />
 
     <div className="relative z-20 p-4 flex flex-col items-center max-w-4xl">
-      <img src="public/logo.png" alt="Second Spring Sisterhood Logo" className="w-24 h-24 mb-6" />
+      <img src="public/logo1.png" alt="Second Spring Sisterhood Logo" className="w-30 h-24 mb-6" />
       <h1 className="font-header-script text-7xl md:text-9xl drop-shadow-lg">
         The Second Spring Sisterhood Retreat
       </h1>
@@ -364,14 +371,14 @@ const WhyBaliSection: React.FC = () => (
     {/* Background image with overlay */}
     <div className="absolute inset-0">
       <img
-        src="https://images.pexels.com/photos/4909331/pexels-photo-4909331.jpeg?auto=compress&cs=tinysrgb&w=1600"
+        src="Why Bali.jpg"
         alt="Balinese temple ritual at sunrise"
         className="w-full h-full object-cover"
       />
       <div className="absolute inset-0 bg-black/50"></div>
     </div>
     <div className="relative z-10 text-center max-w-5xl mx-auto">
-      <EyebrowText className="mb-2" color="white">The Island That Holds You</EyebrowText>
+      <EyebrowText className="mb-2" color="white">The Island That Celebrates You</EyebrowText>
       <WhiteSectionTitle className="mb-6">Why Bali?</WhiteSectionTitle>
       <p className="text-lg md:text-xl mb-12 max-w-3xl mx-auto">
         Bali is not just a destination; it's a living sanctuary. The island's serene landscapes and spiritual energy provide the perfect backdrop for healing and connection. Surrounded by lush rice terraces and the sacred rhythm of a slower life, you'll find your place to step out of the everyday and into the brand new you.
@@ -387,7 +394,7 @@ const WhyBaliSection: React.FC = () => (
 const RetreatGuideSection: React.FC = () => (
   <Section id="retreat-guide" className="bg-white text-center py-20 px-4">
     <div className="max-w-2xl mx-auto">
-      <EyebrowText className="mb-2">Your Journey Begins Here</EyebrowText>
+      {/* <EyebrowText className="mb-2">Your Journey Begins Here</EyebrowText> */}
       <h2 className="text-5xl md:text-6xl font-header-script font-semibold mb-6" style={{ color: COLORS.plum }}>
         Your Second Spring<br/> 
         Retreat Guide
@@ -429,7 +436,7 @@ const RegistrationSection: React.FC = () => {
   ></div>
   <div className="relative z-10 p-16 rounded-3xl shadow-2xl max-w-screen-lg mx-auto bg-white/90 backdrop-blur">
     <SectionTitle className="mb-4 text-center">
-      🌸 How to Join the Sisterhood 🌸
+      How to Join the Sisterhood 
     </SectionTitle>
 
     <p className="text-lg max-w-3xl mx-auto mb-10" style={{ color: COLORS.primaryText }}>
@@ -477,7 +484,7 @@ const Footer: React.FC = () => {
           
           {/* Column 1: Brand & Tagline */}
           <div className="flex flex-col items-center md:items-start">
-            <img src="https://i.ibb.co/7jZ6T2K/sss-logo-final.png" alt="Second Spring Sisterhood Logo" className="h-20 w-auto mb-4" />
+            <img src="logo1.png" alt="Second Spring Sisterhood Logo" className="h-20 w-auto mb-4" />
             <p className="font-header-script text-3xl mb-4" style={{ color: COLORS.plum }}>
               Your second spring awaits.
             </p>
@@ -512,7 +519,7 @@ const Footer: React.FC = () => {
             <h3 className="text-lg font-bold uppercase tracking-wider mb-4" style={{ color: COLORS.plum }}>Connect</h3>
             <div className="flex justify-center md:justify-start items-center gap-5 mb-6">
               <a
-                href="https://instagram.com/melbyrdrocks/"
+                // href="https://instagram.com/melbyrdrocks/"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Instagram"
@@ -524,7 +531,7 @@ const Footer: React.FC = () => {
                 <InstagramIcon className="w-7 h-7" />
               </a>
               <a
-                href="https://instagram.com/melbyrdrocks/"
+                //  href="https://instagram.com/melbyrdrocks/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="font-semibold uppercase tracking-wider hover:underline transition-colors duration-300"

@@ -59,7 +59,7 @@ const RetreatRhythmSection: React.FC = () => {
   return (
     <section style={{ backgroundColor: COLORS.warmBeige }} className="py-20 px-4">
       <div className="text-center max-w-2xl mx-auto mb-16">
-        <EyebrowText className="mb-2">Flow, Not Force</EyebrowText>
+        {/* <EyebrowText className="mb-2">Flow, Not Force</EyebrowText> */}
         <SectionTitle className="mb-4">The Rhythm of Your Day</SectionTitle>
         <p style={{ color: COLORS.primaryText }} className="text-lg">
           You don’t need a rigid schedule. You need a rhythm that lets you breathe, connect, and bloom.

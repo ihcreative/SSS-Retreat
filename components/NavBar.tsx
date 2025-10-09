@@ -22,7 +22,7 @@ const NavBar: React.FC = () => {
         
         {/* Logo */}
         <a href="#" onClick={scrollToTop} className="flex items-center">
-          <img src="https://i.ibb.co/7jZ6T2K/sss-logo-final.png" alt="Second Spring Sisterhood Logo" className="h-[60px] w-auto" />
+          <img src="logo1.png" alt="Second Spring Sisterhood Logo" className="h-[60px] w-auto" />
         </a>
 
         <div className="hidden md:flex items-center space-x-6">
@@ -57,7 +57,7 @@ const NavBar: React.FC = () => {
             className="text-sm font-medium hover:underline transition"
             style={{ color: COLORS.primaryText }}
           >
-            Retreat Guide
+            Rhythm of the day
           </a>
 
           {/* CTA Button */}
