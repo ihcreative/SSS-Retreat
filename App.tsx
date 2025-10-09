@@ -250,7 +250,7 @@ const WelcomeSection: React.FC = () => (
         />
       </div>
       <p className="italic text-lg mb-3" style={{ color: COLORS.plum }}>
-        “This is your second spring — and it’s right on time.”
+        {/* “This is your second spring — and it’s right on time.” */}
       </p>
       <SectionTitle className="mb-4 text-center" >Come Home to Yourself in Bali</SectionTitle>
       <div className="text-lg max-w-3xl" style={{ color: COLORS.primaryText }}>
