@@ -61,7 +61,7 @@ const EXPERIENCES_DATA: Experience[] = [
     icon: SparklesIcon,
     title: "Sacred Ceremonies",
     description: "Reconnect with your inner self through traditional Balinese blessings.",
-    image: "Sacred Ceremonies.jpg",
+    image: "Sacred.jpg",
   },
   {
     icon: MountainIcon,
@@ -209,7 +209,7 @@ const HeroSection: React.FC = () => (
     />
 
     <div className="relative z-20 p-4 flex flex-col items-center max-w-4xl">
-      <img src="logo1.png" alt="Second Spring Sisterhood Logo" className="w-30 h-24 mb-6" />
+      {/* <img src="logo1.png" alt="Second Spring Sisterhood Logo" className="w-30 h-24 mb-6" /> */}
       <h1 className="font-header-script text-7xl md:text-9xl drop-shadow-lg">
         The Second Spring Sisterhood Retreat
       </h1>
@@ -243,7 +243,7 @@ const WelcomeSection: React.FC = () => (
         <iframe
           className="w-full h-full"
           src="https://www.youtube.com/embed/y_Sg0mpou3g" 
-
+          
 
           title="A Message from Coach Melle"
           style={{ border: 0 }}
