@@ -242,7 +242,9 @@ const WelcomeSection: React.FC = () => (
       <div className="rounded-xl overflow-hidden shadow-lg w-full max-w-2xl mb-10 aspect-video">
         <iframe
           className="w-full h-full"
-          src="https://youtu.be/2MmzO2E21kY?si=z1aq9hOmhRuMdRk4"
+          src="https://www.youtube.com/embed/y_Sg0mpou3g" 
+
+
           title="A Message from Coach Melle"
           style={{ border: 0 }}
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
