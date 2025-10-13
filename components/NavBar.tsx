@@ -62,13 +62,15 @@ const NavBar: React.FC = () => {
 
           {/* CTA Button */}
           <a 
-            href="#register" 
-            onClick={e => handleScroll(e, 'register')}
-            className="text-white px-6 py-3 rounded-full font-bold text-sm hover:bg-[#4d2053] transition-all duration-300 transform hover:scale-105 hover:shadow-lg"
-            style={{ backgroundColor: COLORS.plum }}
-          >
-            Save My Spot
-          </a>
+  href="https://forms.gle/utvALEbGc1ihbFiZA"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="text-white px-6 py-3 rounded-full font-bold text-sm hover:bg-[#4d2053] transition-all duration-300 transform hover:scale-105 hover:shadow-lg"
+  style={{ backgroundColor: COLORS.plum }}
+>
+  Save My Spot
+</a>
+
         </div>
       </div>
     </nav>
