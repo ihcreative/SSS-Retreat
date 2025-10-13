@@ -192,7 +192,7 @@ const App: React.FC = () => (
     <FlowSection />
     <RetreatRhythmSection />
     <IncludedSection />
-    <RetreatGuideSection />
+  
     <RegistrationSection />
     <Footer />
   </main>
@@ -272,10 +272,13 @@ const WelcomeSection: React.FC = () => (
 
 // IncludedSection
 const IncludedSection: React.FC = () => (
-  <Section id="included">
+  <Section id="included" className="!pt-4 !pb-4">
+
+
     <div className="text-center mb-16">
       {/* <SectionTitle>What’s Included</SectionTitle> */}
-      <p className="mt-4 text-lg max-w-2xl mx-auto" style={{ color: COLORS.plum }}>
+     <p className="mt-4 text-2xl max-w-2xl mx-auto" style={{ color: COLORS.plum }}>
+
         <strong>
         Your investment includes everything you need to feel nourished and inspired: accommodations in a private villa, daily meals, all workshops and healing sessions, excursions, and retreat materials.
         </strong>
@@ -323,40 +326,57 @@ const IncludedSection: React.FC = () => (
 
 // FlowSection
 const FlowSection: React.FC = () => (
-  <Section id="flow" className="bg-white">
-    <div className="text-center mb-8">
-      <SectionTitle className="text-center mb-4">The Vibe</SectionTitle>
-      <p className="mt-4 text-lg max-w-2xl mx-auto" style={{ color: COLORS.primaryText }}>
-        Your time in Bali will be a journey of profound flow and connection.
-      </p>
-    </div>
+  <Section
+  id="flow"
+  className="bg-white pt-8 md:pt-12 pb-16 md:pb-20 !mt-0"
+>
+  <div className="text-center mb-8">
+    <SectionTitle className="text-center mb-4">The Vibe</SectionTitle>
+    <p
+      className="mt-4 text-lg max-w-2xl mx-auto"
+      style={{ color: COLORS.primaryText }}
+    >
+      Your time in Bali will be a journey of profound flow and connection.
+    </p>
+  </div>
 
-    <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-      {EXPERIENCES_DATA.map((item) => (
-        <div
-          key={item.title}
-          className="rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 flex flex-col"
-          style={{ backgroundColor: COLORS.warmBeige }}
-        >
-          <img src={item.image} alt={item.title} className="w-full h-72 object-cover" />
-          <div className="p-6 text-center flex-1 flex flex-col">
-            <item.icon className="w-8 h-8 mx-auto mb-3" style={{ color: COLORS.plum }} />
-            <h3 className="text-xl font-bold mb-2" style={{ color: COLORS.plum }}>
-              {item.title}
-            </h3>
-            <p className="text-sm flex-1" style={{ color: COLORS.primaryText }}>
-              {item.description}
-            </p>
-          </div>
+  <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+    {EXPERIENCES_DATA.map((item) => (
+      <div
+        key={item.title}
+        className="rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 flex flex-col"
+        style={{ backgroundColor: COLORS.warmBeige }}
+      >
+        <img
+          src={item.image}
+          alt={item.title}
+          className="w-full h-72 object-cover"
+        />
+        <div className="p-6 text-center flex-1 flex flex-col">
+          <item.icon
+            className="w-8 h-8 mx-auto mb-3"
+            style={{ color: COLORS.plum }}
+          />
+          <h3
+            className="text-xl font-bold mb-2"
+            style={{ color: COLORS.plum }}
+          >
+            {item.title}
+          </h3>
+          <p className="text-sm flex-1" style={{ color: COLORS.primaryText }}>
+            {item.description}
+          </p>
         </div>
-      ))}
-    </div>
-  </Section>
+      </div>
+    ))}
+  </div>
+</Section>
+
 );
 
 // WhoShouldAttendSection
 const WhoShouldAttendSection: React.FC = () => (
-  <Section id="who-attends" className="relative bg-white">
+  <Section id="who-attends" className="relative bg-white !pb-0">
     <div className="text-center max-w-4xl mx-auto">
       <SectionTitle className="mb-6">This Retreat Is For You</SectionTitle>
       <p className="text-lg mb-10 max-w-3xl mx-auto" style={{ color: COLORS.primaryText }}>
@@ -398,9 +418,10 @@ const WhyBaliSection: React.FC = () => (
 );
 
 // RetreatGuide (No component exists, inline in App.tsx)
-const RetreatGuideSection: React.FC = () => (
-  <Section id="retreat-guide" className="bg-white text-center py-10 px-4 md:py-14 !mt-0 !pt-0">
-    <div className="max-w-2xl mx-auto">
+// const RetreatGuideSection: React.FC = () => (
+//   <>
+//   // <Section id="retreat-guide" className="bg-white text-center py-10 px-4 md:py-14 !mt-0 !pt-0">
+//   //   <div className="max-w-2xl mx-auto">
       {/* <EyebrowText className="mb-2">Your Journey Begins Here</EyebrowText> */}
       {/* <h2 className="text-5xl md:text-6xl font-header-script font-semibold mb-6" style={{ color: COLORS.plum }}>
         Your Second Spring<br/> 
@@ -416,7 +437,7 @@ const RetreatGuideSection: React.FC = () => (
         <li>🪷 A soulful Bali packing list</li>
       </ul>
       <p>Begin now — your journey starts the moment you open it.</p> */}
-      <div className="mt-8">
+      // <div className="mt-8">
         {/* <a
           href="/The-Second-Spring-Retreat-Guide.pdf" 
           target="_blank"
@@ -426,10 +447,11 @@ const RetreatGuideSection: React.FC = () => (
         >
           👉 Download the Retreat Guide
         </a> */}
-      </div>
-    </div>
-  </Section>
-);
+  //     </div>
+  //   </div>
+  // </Section>
+//   </>
+// );
 
 // RegistrationSaveMySpot
 const RegistrationSection: React.FC = () => {
@@ -487,18 +509,23 @@ const Footer: React.FC = () => {
   return (
     <footer style={{ backgroundColor: COLORS.warmBeige, color: COLORS.primaryText }} className="pt-20 pb-8 px-4">
       <div className="container mx-auto max-w-6xl">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 text-center md:text-left">
+        <div className="flex flex-col items-center text-center gap-8">
           
           {/* Column 1: Brand & Tagline */}
-          <div className="flex flex-col items-center md:items-start">
-            <img src="logo1.png" alt="Second Spring Sisterhood Logo" className="h-20 w-auto mb-4" />
-            <p className="font-header-script text-3xl mb-4" style={{ color: COLORS.plum }}>
-              Your second spring awaits.
-            </p>
-            <p className="text-sm">
-              A sacred space for women to rest, renew, and rise into their full bloom.
-            </p>
-          </div>
+          <div className="flex flex-col items-center md:items-start mx-auto text-center">
+  <img
+    src="logo1.png"
+    alt="Second Spring Sisterhood Logo"
+    className="h-20 w-auto mb-4 mx-auto"
+  />
+  <p className="font-header-script text-3xl mb-4" style={{ color: COLORS.plum }}>
+    Your second spring awaits.
+  </p>
+  <p className="text-sm max-w-sm">
+    A sacred space for women to rest, renew, and rise into their full bloom.
+  </p>
+</div>
+
 
           {/* Column 2: Quick Links */}
           <div>
