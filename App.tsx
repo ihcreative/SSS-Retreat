@@ -219,14 +219,14 @@ const HeroSection: React.FC = () => (
       <p className="mt-6 text-lg md:text-xl font-semibold tracking-wider drop-shadow">
         March 24–27, 2026 | Ubud, Bali | Hosted by Coach Melle
       </p>
-      <div className="mt-10 flex flex-col sm:flex-row gap-4">
+      {/* <div className="mt-10 flex flex-col sm:flex-row gap-4">
         <CtaButton as="a" href="#register" variant="primary">
           Save My Spot
         </CtaButton>
         <CtaButton as="a" href="#welcome" variant="secondary">
           Learn More
         </CtaButton>
-      </div>
+      </div> */}
     </div>
   </header>
 );
@@ -261,7 +261,10 @@ const WelcomeSection: React.FC = () => (
         </p>
       </div>
       <p className="mt-6 text-sm md:text-base opacity-90" style={{ color: COLORS.plum }}>
+        <strong>
         Led by Coach Melle, a transformational guide with 20+ years supporting women.
+        To begin your journey,message Coach Melle at mel@melbyrdrocks.com.She will contact you directly on next steps
+        </strong>
       </p>
     </div>
   </section>
@@ -325,7 +328,6 @@ const FlowSection: React.FC = () => (
         Your time in Bali will be a journey of profound flow and connection.
       </p>
     </div>
-
     <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
       {EXPERIENCES_DATA.map((item) => (
         <div
@@ -385,9 +387,9 @@ const WhyBaliSection: React.FC = () => (
       <p className="text-lg md:text-xl mb-12 max-w-3xl mx-auto">
         Bali is not just a destination; it's a living sanctuary. The island's serene landscapes and spiritual energy provide the perfect backdrop for healing and connection. Surrounded by lush rice terraces and the sacred rhythm of a slower life, you'll find your place to step out of the everyday and into the brand new you.
       </p>
-      <CtaButton as="a" href="#register" variant="primary">
+      {/* <CtaButton as="a" href="#register" variant="primary">
         Save My Spot
-      </CtaButton>
+      </CtaButton> */}
     </div>
   </Section>
 );

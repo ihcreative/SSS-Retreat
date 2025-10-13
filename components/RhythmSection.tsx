@@ -67,9 +67,7 @@ const RetreatRhythmSection: React.FC = () => {
           style={{ color: COLORS.primaryText }}
           className="text-base sm:text-lg leading-relaxed"
         >
-          You don’t need a rigid schedule. You need a rhythm that lets you breathe, connect, and
-          bloom. We designed this retreat to flow with ease — balancing structure and softness to
-          rejuvenate your whole being.
+          You need a rhythm that lets you breathe, connect, and bloom. We designed this retreat to flow with ease — balancing structure and softness to rejuvenate your whole being with The flow of each day lets you breathe, connect, and blossom. We designed this retreat with ease to balance structure and softness that rejuvenates your whole being.
         </p>
       </div>
 
