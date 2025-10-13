@@ -12,7 +12,7 @@ const RHYTHM_DATA = [
   {
     icon: <HeartIcon style={{ color: COLORS.plum }} className="w-6 h-6" />,
     title: 'Sacred Sessions',
-    description: 'nourish your growth with Yoga, Breathwork, Qigong and Sisterhood Circles to nourish your growth.',
+    description: 'Nourish your growth with Yoga, Breathwork, Qigong and Sisterhood Circles to nourish your growth.',
   },
   {
     icon: <LeafIcon style={{ color: COLORS.plum }} className="w-6 h-6" />,

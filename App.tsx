@@ -11,31 +11,31 @@ import { Calendar1Icon } from 'lucide-react';
 
 // --- CONFIG & DATA ---
 const INCLUDED_DATA: IncludedItem[] = [
-  {
-    text: "Accommodations in a private jungle villa",
-    subtext: "Wake up where the jungle sings your name.",
-    featured: true,
-  },
-  {
-    text: "Daily locally-sourced meals",
-    subtext: "Nourish yourself with every bite.",
-  },
-  {
-    text: "All workshops, ceremonies, and healing sessions",
-    subtext: "Come home to the parts of you that feel forgotten.",
-  },
-  {
-    text: "A guided water blessing at a local waterfall",
-    subtext: "Walk the sacred paths of Bali with intention.",
-  },
-  {
-    text: "Professional photographer to capture your glow",
-    subtext: "Because your radiance deserves to be witnessed.",
-  },
-  {
-    text: "A curated welcome gift to kick off your journey",
-    subtext: "A blessing from the island to take home.",
-  },
+  // {
+  //   text: "Accommodations in a private jungle villa",
+  //   subtext: "Wake up where the jungle sings your name.",
+  //   featured: true,
+  // },
+  // {
+  //   text: "Daily locally-sourced meals",
+  //   subtext: "Nourish yourself with every bite.",
+  // },
+  // {
+  //   text: "All workshops, ceremonies, and healing sessions",
+  //   subtext: "Come home to the parts of you that feel forgotten.",
+  // },
+  // {
+  //   text: "A guided water blessing at a local waterfall",
+  //   subtext: "Walk the sacred paths of Bali with intention.",
+  // },
+  // {
+  //   text: "Professional photographer to capture your glow",
+  //   subtext: "Because your radiance deserves to be witnessed.",
+  // },
+  // {
+  //   text: "A curated welcome gift to kick off your journey",
+  //   subtext: "A blessing from the island to take home.",
+  // },
 ];
 
 const EXPERIENCES_DATA: Experience[] = [
@@ -214,7 +214,7 @@ const HeroSection: React.FC = () => (
         The Second Spring Sisterhood Retreat
       </h1>
       <p className="mt-4 text-2xl md:text-3xl font-light tracking-wide drop-shadow-md">
-        Blossom into Full Bloom
+        "Blossom into Full Bloom"
       </p>
       <p className="mt-6 text-lg md:text-xl font-semibold tracking-wider drop-shadow">
         March 24–27, 2026 | Ubud, Bali | Hosted by Coach Melle
@@ -274,9 +274,11 @@ const WelcomeSection: React.FC = () => (
 const IncludedSection: React.FC = () => (
   <Section id="included">
     <div className="text-center mb-16">
-      <SectionTitle>What’s Included</SectionTitle>
-      <p className="mt-4 text-lg max-w-2xl mx-auto" style={{ color: COLORS.primaryText }}>
+      {/* <SectionTitle>What’s Included</SectionTitle> */}
+      <p className="mt-4 text-lg max-w-2xl mx-auto" style={{ color: COLORS.plum }}>
+        <strong>
         Your investment includes everything you need to feel nourished and inspired: accommodations in a private villa, daily meals, all workshops and healing sessions, excursions, and retreat materials.
+        </strong>
       </p>
     </div>
     <div className="grid sm:grid-cols-2 gap-x-12 gap-y-10 max-w-5xl mx-auto">
@@ -311,11 +313,11 @@ const IncludedSection: React.FC = () => (
       ))}
     </div>
 
-    <div className="mt-16 text-center">
+    {/* <div className="mt-16 text-center">
       <CtaButton as="a" href="#register" variant="primary">
         Save My Spot
       </CtaButton>
-    </div>
+    </div> */}
   </Section>
 );
 
@@ -328,6 +330,7 @@ const FlowSection: React.FC = () => (
         Your time in Bali will be a journey of profound flow and connection.
       </p>
     </div>
+
     <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
       {EXPERIENCES_DATA.map((item) => (
         <div
@@ -396,14 +399,14 @@ const WhyBaliSection: React.FC = () => (
 
 // RetreatGuide (No component exists, inline in App.tsx)
 const RetreatGuideSection: React.FC = () => (
-  <Section id="retreat-guide" className="bg-white text-center py-20 px-4">
+  <Section id="retreat-guide" className="bg-white text-center py-10 px-4 md:py-14 !mt-0 !pt-0">
     <div className="max-w-2xl mx-auto">
       {/* <EyebrowText className="mb-2">Your Journey Begins Here</EyebrowText> */}
-      <h2 className="text-5xl md:text-6xl font-header-script font-semibold mb-6" style={{ color: COLORS.plum }}>
+      {/* <h2 className="text-5xl md:text-6xl font-header-script font-semibold mb-6" style={{ color: COLORS.plum }}>
         Your Second Spring<br/> 
         Retreat Guide
-      </h2>
-      <p className="mb-8 text-lg" style={{ color: COLORS.primaryText }}>
+      </h2> */}
+      {/* <p className="mb-8 text-lg" style={{ color: COLORS.primaryText }}>
         We’ve prepared something special for you. The Second Spring Retreat Guide is more than an itinerary — it’s a taste of the journey awaiting you in Bali. Inside, you’ll find:
       </p>
       <ul className="mb-10 text-center text-lg max-w-lg mx-auto space-y-3">
@@ -412,9 +415,9 @@ const RetreatGuideSection: React.FC = () => (
         <li>🪷 Reflection prompts to begin your transformation now</li>
         <li>🪷 A soulful Bali packing list</li>
       </ul>
-      <p>Begin now — your journey starts the moment you open it.</p>
+      <p>Begin now — your journey starts the moment you open it.</p> */}
       <div className="mt-8">
-        <a
+        {/* <a
           href="/The-Second-Spring-Retreat-Guide.pdf" 
           target="_blank"
           rel="noopener noreferrer"
@@ -422,7 +425,7 @@ const RetreatGuideSection: React.FC = () => (
           style={{ backgroundColor: COLORS.plum }}
         >
           👉 Download the Retreat Guide
-        </a>
+        </a> */}
       </div>
     </div>
   </Section>
@@ -475,10 +478,10 @@ const Footer: React.FC = () => {
   };
 
   const footerLinks = [
-    { name: 'About', href: '#welcome', id: 'welcome' },
-    { name: 'The Vibe', href: '#flow', id: 'flow' },
-    { name: 'What\'s Included', href: '#included', id: 'included' },
-    { name: 'Retreat Guide', href: '#retreat-guide', id: 'retreat-guide' },
+    // { name: 'About', href: '#welcome', id: 'welcome' },
+    // { name: 'The Vibe', href: '#flow', id: 'flow' },
+    // { name: 'What\'s Included', href: '#included', id: 'included' },
+    // { name: 'Retreat Guide', href: '#retreat-guide', id: 'retreat-guide' },
   ];
 
   return (
@@ -499,7 +502,7 @@ const Footer: React.FC = () => {
 
           {/* Column 2: Quick Links */}
           <div>
-            <h3 className="text-lg font-bold uppercase tracking-wider mb-4" style={{ color: COLORS.plum }}>Explore</h3>
+            {/* <h3 className="text-lg font-bold uppercase tracking-wider mb-4" style={{ color: COLORS.plum }}>Explore</h3> */}
             <ul className="space-y-3">
               {footerLinks.map(link => (
                 <li key={link.name}>
@@ -520,7 +523,7 @@ const Footer: React.FC = () => {
 
           {/* Column 3: Connect & CTA */}
           <div>
-            <h3 className="text-lg font-bold uppercase tracking-wider mb-4" style={{ color: COLORS.plum }}>Connect</h3>
+            {/* <h3 className="text-lg font-bold uppercase tracking-wider mb-4" style={{ color: COLORS.plum }}>Connect</h3> */}
             <div className="flex justify-center md:justify-start items-center gap-5 mb-6">
               <a
                 // href="https://instagram.com/melbyrdrocks/"
@@ -532,7 +535,7 @@ const Footer: React.FC = () => {
                 onMouseOver={e => (e.currentTarget.style.color = COLORS.plum)}
                 onMouseOut={e => (e.currentTarget.style.color = 'inherit')}
               >
-                <InstagramIcon className="w-7 h-7" />
+                {/* <InstagramIcon className="w-7 h-7" /> */}
               </a>
               <a
                 //  href="https://instagram.com/melbyrdrocks/"
@@ -543,12 +546,12 @@ const Footer: React.FC = () => {
                 onMouseOver={e => (e.currentTarget.style.color = COLORS.plum)}
                 onMouseOut={e => (e.currentTarget.style.color = 'inherit')}
               >
-                Coach Melle
+      
               </a>
             </div>
-            <CtaButton as="a" href="#register" variant="primary" className="w-full md:w-auto">
+            {/* <CtaButton as="a" href="#register" variant="primary" className="w-full md:w-auto">
               Save My Spot
-            </CtaButton>
+            </CtaButton> */}
           </div>
 
         </div>
