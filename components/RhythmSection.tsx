@@ -6,23 +6,23 @@ import { COLORS } from '../config';
 const RHYTHM_DATA = [
   {
     icon: <SunIcon style={{ color: COLORS.plum }} className="w-6 h-6" />,
-    title: 'Ease Into the Day',
+    title: 'Soft Opening of the Day',
     description: 'Gentle mornings with tea, movement, and breath — no alarms needed.',
   },
   {
     icon: <HeartIcon style={{ color: COLORS.plum }} className="w-6 h-6" />,
     title: 'Sacred Sessions',
-    description: 'Workshops, healing, and sisterhood circles to nourish your growth.',
+    description: 'nourish your growth with Yoga, Breathwork, Qigong and Sisterhood Circles to nourish your growth.',
   },
   {
     icon: <LeafIcon style={{ color: COLORS.plum }} className="w-6 h-6" />,
-    title: 'Nourishment & Rest',
-    description: 'Delicious meals, cozy downtime, naps by the pool, time to just *be*.',
+    title: 'Dedicated Time to Reset',
+    description: 'You will focus on your needs and what is best for your ascension',
   },
   {
     icon: <CalendarIcon style={{ color: COLORS.plum }} className="w-6 h-6" />,
     title: 'Exploration & Ceremony',
-    description: 'Excursions, water blessings, fire rituals — all woven with intention.',
+    description: 'Excursions, water blessings, and sound healing – all woven with intention.',
   },
   {
     icon: <MoonIcon style={{ color: COLORS.plum }} className="w-6 h-6" />,
