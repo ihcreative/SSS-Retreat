@@ -55,7 +55,7 @@ const EXPERIENCES_DATA: Experience[] = [
     icon: MessageCircleIcon,
     title: "Sisterhood Circles",
     description: "Reclaim your power through transformative workshops and deep conversations.",
-    image: "https://images.pexels.com/photos/5890690/pexels-photo-5890690.jpeg?auto=compress&cs=tinysrgb&w=800",
+    image: "image.png",
   },
    {
     icon: SparklesIcon,
