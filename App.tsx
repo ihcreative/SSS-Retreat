@@ -43,7 +43,7 @@ const EXPERIENCES_DATA: Experience[] = [
     icon: SpaIcon,
     title: "Morning Rituals",
     description: "Start each day with movement, affirmations, and meditation to align your mind, body, and spirit.",
-    image: "Morning Ritual.jpg",
+    image: "Morning Ritual.webp",
   },
   {
     icon: LeafIcon,
@@ -61,13 +61,13 @@ const EXPERIENCES_DATA: Experience[] = [
     icon: SparklesIcon,
     title: "Sacred Ceremonies",
     description: "Reconnect with your inner self through traditional Balinese blessings.",
-    image: "Sacred.jpg",
+    image: "Sacred.webp",
   },
   {
     icon: MountainIcon,
     title: "Group Excursions",
     description: "Explore Bali's natural beauty with guided waterfall visits, the Bali swing, and optional beach clubs.",
-    image: "Group excursion.jpg",
+    image: "Group excursion.webp",
   },
   {
     icon: Calendar1Icon,
@@ -242,7 +242,7 @@ const WelcomeSection: React.FC = () => (
       <div className="rounded-xl overflow-hidden shadow-lg w-full max-w-2xl mb-10 aspect-video">
         <iframe
           className="w-full h-full"
-          src="https://www.youtube.com/embed/y_Sg0mpou3g" 
+          src="https://www.youtube.com/embed/bYEvVb3r85g" 
           
 
           title="A Message from Coach Melle"
@@ -260,12 +260,17 @@ const WelcomeSection: React.FC = () => (
             Imagine yourself in Bali, the Island of the Gods, surrounded by lush rice fields, healing waters, and the warmth of sisterhood. The Second Spring Sisterhood Retreat is your invitation to pause, reset, and rise into the radiant season of the authentic you. This sacred journey is curated for women ready to embrace joy, clarity, and courage in a space where they feel seen, heard, and celebrated.
         </p>
       </div>
-      <p className="mt-6 text-sm md:text-base opacity-90" style={{ color: COLORS.plum }}>
-        <strong>
-        Led by Coach Melle, a transformational guide with 20+ years supporting women.
-        To begin your journey,message Coach Melle at mel@melbyrdrocks.com.She will contact you directly on next steps
-        </strong>
-      </p>
+     <p
+  className="mt-6 text-sm md:text-base opacity-90 text-center max-w-2xl mx-auto leading-relaxed"
+  style={{ color: COLORS.plum }}
+>
+  <strong>
+    Led by Coach Melle, a transformational guide with 20+ years supporting women.
+    To begin your journey, message Coach Melle at mel@melbyrdrocks.com. 
+    <p>She will contact you directly on next steps.</p>
+  </strong>
+</p>
+
     </div>
   </section>
 );
@@ -398,7 +403,7 @@ const WhyBaliSection: React.FC = () => (
     {/* Background image with overlay */}
     <div className="absolute inset-0">
       <img
-        src="Why Bali.jpg"
+        src="Why Bali.webp"
         alt="Balinese temple ritual at sunrise"
         className="w-full h-full object-cover"
       />
@@ -471,6 +476,16 @@ const RegistrationSection: React.FC = () => {
     <p className="text-lg max-w-3xl mx-auto mb-10" style={{ color: COLORS.primaryText }}>
       Registration opens late October 2025. Spaces are limited to only 20 women. 
       This is your moment to step into renewal, community, and your Second Spring.
+      <p className= "mt-6 text-sm md:text-base opacity-90 text-center max-w-2xl mx-auto leading-relaxed"
+  style={{ color: COLORS.plum }}>
+        <strong>
+         
+    To begin your journey, message Coach Melle at mel@melbyrdrocks.com. 
+     <p>
+    She will contact you directly on next steps.
+    </p>
+  </strong>
+  </p>
     </p>
 
     <div className="mt-8 flex flex-col sm:flex-row justify-center items-center gap-4">
@@ -518,12 +533,14 @@ const Footer: React.FC = () => {
     alt="Second Spring Sisterhood Logo"
     className="h-20 w-auto mb-4 mx-auto"
   />
+ <div className="text-center">
   <p className="font-header-script text-3xl mb-4" style={{ color: COLORS.plum }}>
     Your second spring awaits.
   </p>
-  <p className="text-sm max-w-sm">
+  <p className="text-sm max-w-sm mx-auto">
     A sacred space for women to rest, renew, and rise into their full bloom.
   </p>
+</div>
 </div>
 
 

@@ -7,7 +7,7 @@ const RHYTHM_DATA = [
   {
     icon: <SunIcon style={{ color: COLORS.plum }} className="w-6 h-6" />,
     title: 'Soft Opening of the Day',
-    description: 'Gentle mornings with tea, movement, and breath — no alarms needed.',
+    description: 'Gentle mornings with positivity, mindfulness, and intentional sound allows you to ease into the day.',
   },
   {
     icon: <HeartIcon style={{ color: COLORS.plum }} className="w-6 h-6" />,
@@ -67,7 +67,7 @@ const RetreatRhythmSection: React.FC = () => {
           style={{ color: COLORS.primaryText }}
           className="text-base sm:text-lg leading-relaxed"
         >
-          You need a rhythm that lets you breathe, connect, and bloom. We designed this retreat to flow with ease — balancing structure and softness to rejuvenate your whole being with The flow of each day lets you breathe, connect, and blossom. We designed this retreat with ease to balance structure and softness that rejuvenates your whole being.
+          The flow of each day lets you breathe, connect, and blossom. We designed this retreat with ease to balance structure and softness that rejuvenates your whole being.
         </p>
       </div>
 
