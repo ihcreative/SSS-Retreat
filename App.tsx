@@ -55,7 +55,7 @@ const EXPERIENCES_DATA: Experience[] = [
     icon: MessageCircleIcon,
     title: "Sisterhood Circles",
     description: "Reclaim your power through transformative workshops and deep conversations.",
-    image: "image.png",
+    image: "sister circle.webp",
   },
    {
     icon: SparklesIcon,
@@ -277,7 +277,8 @@ const WelcomeSection: React.FC = () => (
 
 // IncludedSection
 const IncludedSection: React.FC = () => (
-  <Section id="included" className="!pt-4 !pb-4">
+  <Section id="included" className="!pt-4 !pb-4 scroll-mt-24">
+
 
 
     <div className="text-center mb-16">
@@ -332,10 +333,9 @@ const IncludedSection: React.FC = () => (
 // FlowSection
 const FlowSection: React.FC = () => (
   <Section
-  id="flow"
   className="bg-white pt-8 md:pt-12 pb-16 md:pb-20 !mt-0"
 >
-  <div className="text-center mb-8">
+  <div id="flow" className="text-center mb-8 scroll-mt-24">
     <SectionTitle className="text-center mb-4">The Vibe</SectionTitle>
     <p
       className="mt-4 text-lg max-w-2xl mx-auto"

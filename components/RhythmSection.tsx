@@ -61,7 +61,7 @@ const RetreatRhythmSection: React.FC = () => {
       style={{ backgroundColor: COLORS.warmBeige }}
       className="py-16 sm:py-20 px-4 sm:px-8"
     >
-      <div className="text-center max-w-2xl mx-auto mb-12 sm:mb-16">
+      <div id= "retreat-guide" className="text-center max-w-2xl mx-auto mb-12 sm:mb-16 scroll-mt-24">
         <SectionTitle className="mb-4">The Rhythm of Your Day</SectionTitle>
         <p
           style={{ color: COLORS.primaryText }}
@@ -71,7 +71,7 @@ const RetreatRhythmSection: React.FC = () => {
         </p>
       </div>
 
-      <div className="relative max-w-5xl mx-auto">
+      <div className= "relative max-w-5xl mx-auto">
         {/* Vertical timeline line (hidden on small screens) */}
         <div
           className="hidden md:block absolute left-1/2 transform -translate-x-1/2 h-full border-l-2"

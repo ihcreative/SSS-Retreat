@@ -60,7 +60,7 @@ const NavBar: React.FC = () => {
             Rhythm of the day
           </a>
           <a 
-  href="#Rhythm of the day" 
+  href="#Rhythm" 
   onClick={e => handleScroll(e, 'Rhythm of the day')}
   className="text-sm font-medium hover:underline transition"
   style={{ color: COLORS.primaryText }}
