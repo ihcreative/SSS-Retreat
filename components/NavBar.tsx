@@ -59,17 +59,23 @@ const NavBar: React.FC = () => {
           >
             Rhythm of the day
           </a>
-
+          <a 
+  href="#Rhythm" 
+  onClick={e => handleScroll(e, 'Rhythm of the day')}
+  className="text-sm font-medium hover:underline transition"
+  style={{ color: COLORS.primaryText }}
+> 
+          </a>
           {/* CTA Button */}
           <a 
-  href="https://forms.gle/utvALEbGc1ihbFiZA"
-  target="_blank"
-  rel="noopener noreferrer"
-  className="text-white px-6 py-3 rounded-full font-bold text-sm hover:bg-[#4d2053] transition-all duration-300 transform hover:scale-105 hover:shadow-lg"
-  style={{ backgroundColor: COLORS.plum }}
->
+            href="https://forms.gle/utvALEbGc1ihbFiZA"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-white px-6 py-3 rounded-full font-bold text-sm hover:bg-[#4d2053] transition-all duration-300 transform hover:scale-105 hover:shadow-lg"
+            style={{ backgroundColor: COLORS.plum }}
+          >
   Save My Spot
-</a>
+          </a>
 
         </div>
       </div>

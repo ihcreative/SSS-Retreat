@@ -7,7 +7,7 @@ const RHYTHM_DATA = [
   {
     icon: <SunIcon style={{ color: COLORS.plum }} className="w-6 h-6" />,
     title: 'Soft Opening of the Day',
-    description: 'Gentle mornings with tea, movement, and breath — no alarms needed.',
+    description: 'Gentle mornings with positivity, mindfulness, and intentional sound allows you to ease into the day.',
   },
   {
     icon: <HeartIcon style={{ color: COLORS.plum }} className="w-6 h-6" />,
@@ -61,17 +61,17 @@ const RetreatRhythmSection: React.FC = () => {
       style={{ backgroundColor: COLORS.warmBeige }}
       className="py-16 sm:py-20 px-4 sm:px-8"
     >
-      <div className="text-center max-w-2xl mx-auto mb-12 sm:mb-16">
+      <div id= "retreat-guide" className="text-center max-w-2xl mx-auto mb-12 sm:mb-16 scroll-mt-24">
         <SectionTitle className="mb-4">The Rhythm of Your Day</SectionTitle>
         <p
           style={{ color: COLORS.primaryText }}
           className="text-base sm:text-lg leading-relaxed"
         >
-          You need a rhythm that lets you breathe, connect, and bloom. We designed this retreat to flow with ease — balancing structure and softness to rejuvenate your whole being with The flow of each day lets you breathe, connect, and blossom. We designed this retreat with ease to balance structure and softness that rejuvenates your whole being.
+          The flow of each day lets you breathe, connect, and blossom. We designed this retreat with ease to balance structure and softness that rejuvenates your whole being.
         </p>
       </div>
 
-      <div className="relative max-w-5xl mx-auto">
+      <div className= "relative max-w-5xl mx-auto">
         {/* Vertical timeline line (hidden on small screens) */}
         <div
           className="hidden md:block absolute left-1/2 transform -translate-x-1/2 h-full border-l-2"
